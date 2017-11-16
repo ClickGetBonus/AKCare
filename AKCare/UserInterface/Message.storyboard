@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Ns-Cg-E45">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--MessageVC-->
+        <scene sceneID="llI-Fw-GcR">
+            <objects>
+                <viewController id="PmI-Qa-W0x" customClass="MessageVC" customModule="AKCare" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="k1M-yr-1jc">
+                        <nil key="title"/>
+                        <view key="titleView" contentMode="scaleToFill" id="4lW-Lo-brz">
+                            <rect key="frame" x="149" y="10" width="77" height="24"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NavIcon" translatesAutoresizingMaskIntoConstraints="NO" id="KJE-Ai-e28">
+                                    <rect key="frame" x="0.0" y="0.0" width="77" height="24"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="KJE-Ai-e28" secondAttribute="trailing" id="3A8-zE-xbh"/>
+                                <constraint firstItem="KJE-Ai-e28" firstAttribute="top" secondItem="4lW-Lo-brz" secondAttribute="top" id="FRq-bS-JDy"/>
+                                <constraint firstItem="KJE-Ai-e28" firstAttribute="leading" secondItem="4lW-Lo-brz" secondAttribute="leading" id="dQq-Hm-yIj"/>
+                                <constraint firstAttribute="bottom" secondItem="KJE-Ai-e28" secondAttribute="bottom" id="fJY-ln-hKE"/>
+                            </constraints>
+                            <viewLayoutGuide key="safeArea" id="Lto-wa-Zj0"/>
+                        </view>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hlV-X5-nXB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="650" y="22"/>
+        </scene>
+        <!--Base Nav Controller-->
+        <scene sceneID="VJD-vS-mYN">
+            <objects>
+                <navigationController id="3Ns-Cg-E45" customClass="BaseNavController" customModule="AKCare" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="S81-Ix-cpt">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.16862745100000001" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="PmI-Qa-W0x" kind="relationship" relationship="rootViewController" id="Var-rR-34K"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pf8-Y9-nJn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-42" y="21"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="NavIcon" width="77" height="24"/>
+    </resources>
+</document>

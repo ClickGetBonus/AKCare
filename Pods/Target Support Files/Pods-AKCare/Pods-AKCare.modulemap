@@ -1,0 +1,6 @@
+framework module Pods_AKCare {
+  umbrella header "Pods-AKCare-umbrella.h"
+
+  export *
+  module * { export * }
+}

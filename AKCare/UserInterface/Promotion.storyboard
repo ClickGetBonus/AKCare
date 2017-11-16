@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YtV-hP-5WY">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Base Nav Controller-->
+        <scene sceneID="S3S-En-36z">
+            <objects>
+                <navigationController id="YtV-hP-5WY" customClass="BaseNavController" customModule="AKCare" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rCa-kd-m86">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.16862745100000001" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="iT6-kv-Tjt" kind="relationship" relationship="rootViewController" id="zJH-YW-3lM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pZI-NE-i4T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-879" y="100"/>
+        </scene>
+        <!--PromotionVC-->
+        <scene sceneID="wEx-Cz-ckf">
+            <objects>
+                <viewController id="iT6-kv-Tjt" customClass="PromotionVC" customModule="AKCare" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="b8H-hC-g5q">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="KRe-Xp-xAI"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ifc-dY-JFf">
+                        <nil key="title"/>
+                        <view key="titleView" contentMode="scaleToFill" id="mTn-uy-2HR">
+                            <rect key="frame" x="149" y="10" width="77" height="24"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NavIcon" translatesAutoresizingMaskIntoConstraints="NO" id="VoF-PI-hz4">
+                                    <rect key="frame" x="0.0" y="0.0" width="77" height="24"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="VoF-PI-hz4" firstAttribute="top" secondItem="mTn-uy-2HR" secondAttribute="top" id="BF9-Ew-Gxk"/>
+                                <constraint firstAttribute="trailing" secondItem="VoF-PI-hz4" secondAttribute="trailing" id="ReC-9Z-z5H"/>
+                                <constraint firstItem="VoF-PI-hz4" firstAttribute="leading" secondItem="mTn-uy-2HR" secondAttribute="leading" id="iPe-DR-uMU"/>
+                                <constraint firstAttribute="bottom" secondItem="VoF-PI-hz4" secondAttribute="bottom" id="tqQ-cC-APf"/>
+                            </constraints>
+                            <viewLayoutGuide key="safeArea" id="39h-ko-bGS"/>
+                        </view>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B8n-7n-U0J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-113" y="101"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="NavIcon" width="77" height="24"/>
+    </resources>
+</document>

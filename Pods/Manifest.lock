@@ -1,0 +1,36 @@
+PODS:
+  - Alamofire (4.5.1)
+  - DGElasticPullToRefresh (1.1)
+  - Gemini (1.2.0)
+  - HandyJSON (4.0.0-beta.1)
+  - Kingfisher (4.2.0)
+  - PKHUD (5.0.0)
+  - R.swift (4.0.0):
+    - R.swift.Library (~> 4.0.0)
+  - R.swift.Library (4.0.0)
+  - SwiftyJSON (4.0.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.5)
+  - DGElasticPullToRefresh (~> 1.1)
+  - Gemini
+  - HandyJSON (~> 4.0.0-beta.1)
+  - Kingfisher
+  - PKHUD (~> 5.0.0)
+  - R.swift
+  - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  DGElasticPullToRefresh: 28f11a6026302a90f8ffebbc6e24748e584dddd3
+  Gemini: acff98012273066f1b83c887731260abfaf18ec5
+  HandyJSON: 428bb18e2c34c2a77361accebf90cf64e4f74118
+  Kingfisher: 9ee7e788d8ba07c3f21ce0d43f33cec310a4f781
+  PKHUD: 3c001512c6e002091184197a8de7a20420786e3b
+  R.swift: d6a5ec2f55a8441dc0ed9f1f8b37d7d11ae85c66
+  R.swift.Library: c3af34921024333546e23b70e70d0b4e0cffca75
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
+
+PODFILE CHECKSUM: 4e59a9ebe5b9e3dde8d3c1c0ecffd0a2bf443b6d
+
+COCOAPODS: 1.4.0.beta.2
