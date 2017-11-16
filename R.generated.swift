@@ -1151,6 +1151,7 @@ struct _R: Rswift.Validatable {
     static func validate() throws {
       try promotion.validate()
       try login.validate()
+      try me.validate()
       try home.validate()
       try message.validate()
     }
@@ -1198,11 +1199,19 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    struct me: Rswift.StoryboardResourceWithInitialControllerType {
+    struct me: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
       typealias InitialController = BaseNavController
       
       let bundle = R.hostingBundle
       let name = "Me"
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "my_sex1") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'my_sex1' is used in storyboard 'Me', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "my_v1_big") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'my_v1_big' is used in storyboard 'Me', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "icon_sign") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icon_sign' is used in storyboard 'Me', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "icon_locatioin") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icon_locatioin' is used in storyboard 'Me', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "icon_howto") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icon_howto' is used in storyboard 'Me', but couldn't be loaded.") }
+      }
       
       fileprivate init() {}
     }
