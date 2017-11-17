@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import PKHUD
 
 struct URLSessionClient: Client {
     
@@ -26,14 +27,29 @@ struct URLSessionClient: Client {
         parameters["vid"] = 30100
         
         
+        
+        
+        
+        SwiftLoader.show(animated: true)
+        
         print("request url : \(url) ")
         print("request parameters: \(parameters)")
         Alamofire.request(url, method: r.method, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseString { (response) in
             
+            SwiftLoader.hide()
             if let json = response.result.value {
-                handler(T.Response.parse(json))
+                
+                let baseResponse = BaseResponse.parse(json)
+                if let success = baseResponse?.success, success == true {
+                    handler(T.Response.parse(json))
+                } else {
+                    HUD.flash(.label(baseResponse?.resStr), delay: HUDPresentTimeInterval)
+                    handler(nil)
+                }
+                
                 print("response json = \(json)")
             } else {
+                HUD.flash(.label(response.description), delay: HUDPresentTimeInterval)
                 handler(nil)
             }
         }

@@ -10,16 +10,17 @@
 import Foundation
 import SwiftyJSON
 
-class UserManager {
+class AKUserManager {
     
-    var userAuth: Auth? {
+    static var userAuth: Auth? {
         get {
             let json = UserDefaults.standard.string(forKey: "userAuth")
             return Auth.deserialize(from: json)
         }
         set {
             if newValue != nil {
-                UserDefaults.standard.set(JSON(newValue!).stringValue, forKey: "userAuth")
+                let json = newValue!.toJSONString()
+                UserDefaults.standard.set(json, forKey: "userAuth")
             }
         }
     }

@@ -25,7 +25,6 @@ class MeVC: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var meOptionView: UIView!
     
-    
     let optionViewHeight: CGFloat = 120
     
     let options: [MeOption] = [.message, .card, .order, .save, .info, .password, .feedback, .controlGuide, .aboutUs]
@@ -83,4 +82,11 @@ class MeVC: UIViewController {
         
         print(optionTitles[sender.tag])
     }
+    
+    
+    @IBAction func goExpRule(_ sender: Any) {
+        let vc = H5ViewController(url: AKExpRuleUrl)
+        self.show(vc, sender: nil)
+    }
+    
 }

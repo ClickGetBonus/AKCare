@@ -14,7 +14,7 @@
         <scene sceneID="S3S-En-36z">
             <objects>
                 <navigationController id="YtV-hP-5WY" customClass="BaseNavController" customModule="AKCare" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rCa-kd-m86">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="rCa-kd-m86">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.0" green="0.16862745100000001" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -32,9 +32,25 @@
             <objects>
                 <viewController id="iT6-kv-Tjt" customClass="PromotionVC" customModule="AKCare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="b8H-hC-g5q">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="afR-Gd-EJN">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="iT6-kv-Tjt" id="oJy-1t-YyV"/>
+                                    <outlet property="delegate" destination="iT6-kv-Tjt" id="PFW-10-RS5"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="afR-Gd-EJN" firstAttribute="top" secondItem="KRe-Xp-xAI" secondAttribute="top" id="54N-ef-XN8"/>
+                            <constraint firstItem="afR-Gd-EJN" firstAttribute="leading" secondItem="KRe-Xp-xAI" secondAttribute="leading" id="G0W-Kj-zTR"/>
+                            <constraint firstItem="KRe-Xp-xAI" firstAttribute="bottom" secondItem="afR-Gd-EJN" secondAttribute="bottom" id="R3R-zu-YbK"/>
+                            <constraint firstItem="KRe-Xp-xAI" firstAttribute="trailing" secondItem="afR-Gd-EJN" secondAttribute="trailing" id="nJ0-S2-cCa"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="KRe-Xp-xAI"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ifc-dY-JFf">
@@ -57,6 +73,9 @@
                             <viewLayoutGuide key="safeArea" id="39h-ko-bGS"/>
                         </view>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="afR-Gd-EJN" id="XhF-zI-aH9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B8n-7n-U0J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

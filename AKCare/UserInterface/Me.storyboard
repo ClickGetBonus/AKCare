@@ -50,8 +50,11 @@
                                                 <state key="normal" image="my_sex1"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAX-aM-Cyq">
-                                                <rect key="frame" x="287" y="36" width="88" height="22"/>
-                                                <state key="normal" image="icon_howto"/>
+                                                <rect key="frame" x="276" y="36" width="119" height="22"/>
+                                                <state key="normal" image="howGetPoint"/>
+                                                <connections>
+                                                    <action selector="goExpRule:" destination="eTp-i3-yeg" eventType="touchUpInside" id="nsw-za-df2"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="广东省" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2o-9D-lIT">
                                                 <rect key="frame" x="40" y="36" width="37" height="14.5"/>
@@ -115,7 +118,7 @@
                                             <constraint firstItem="xYN-a5-iMM" firstAttribute="centerX" secondItem="MgD-Wt-KfG" secondAttribute="centerX" id="PJp-Aw-rlO"/>
                                             <constraint firstItem="Y4P-SY-oLk" firstAttribute="leading" secondItem="tpf-mJ-30Q" secondAttribute="trailing" constant="0.5" id="Wde-yF-KWp"/>
                                             <constraint firstItem="bOD-Gf-jck" firstAttribute="centerX" secondItem="dpv-LD-kQd" secondAttribute="centerX" id="ara-p6-mOX"/>
-                                            <constraint firstAttribute="trailing" secondItem="AAX-aM-Cyq" secondAttribute="trailing" id="e6m-Yk-2qI"/>
+                                            <constraint firstAttribute="trailing" secondItem="AAX-aM-Cyq" secondAttribute="trailing" constant="-20" id="e6m-Yk-2qI"/>
                                             <constraint firstItem="0dV-wf-Idt" firstAttribute="top" secondItem="uPN-5I-fCy" secondAttribute="bottom" constant="40" id="fFj-ux-vtE"/>
                                             <constraint firstItem="uPN-5I-fCy" firstAttribute="top" secondItem="dpv-LD-kQd" secondAttribute="top" constant="36" id="gEZ-h6-96o"/>
                                             <constraint firstItem="OUU-hd-jUZ" firstAttribute="leading" secondItem="0dV-wf-Idt" secondAttribute="leading" id="kDE-UC-nxA"/>
@@ -170,7 +173,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icon_howto" width="88" height="21"/>
+        <image name="howGetPoint" width="119" height="21"/>
         <image name="icon_locatioin" width="12" height="14"/>
         <image name="icon_sign" width="62" height="61"/>
         <image name="my_sex1" width="90" height="90"/>

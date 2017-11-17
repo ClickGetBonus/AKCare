@@ -31,7 +31,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 143 images.
+  /// This `R.image` struct is generated, and contains static references to 144 images.
   struct image {
     /// Image `LaunchImage`.
     static let launchImage = Rswift.ImageResource(bundle: R.hostingBundle, name: "LaunchImage")
@@ -93,6 +93,8 @@ struct R: Rswift.Validatable {
     static let hotInfo_left_bg = Rswift.ImageResource(bundle: R.hostingBundle, name: "hotInfo_left_bg")
     /// Image `hotInfo_right_bg`.
     static let hotInfo_right_bg = Rswift.ImageResource(bundle: R.hostingBundle, name: "hotInfo_right_bg")
+    /// Image `howGetPoint`.
+    static let howGetPoint = Rswift.ImageResource(bundle: R.hostingBundle, name: "howGetPoint")
     /// Image `icon_bought`.
     static let icon_bought = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon_bought")
     /// Image `icon_howto`.
@@ -468,6 +470,11 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "hotInfo_right_bg", bundle: ..., traitCollection: ...)`
     static func hotInfo_right_bg(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.hotInfo_right_bg, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "howGetPoint", bundle: ..., traitCollection: ...)`
+    static func howGetPoint(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.howGetPoint, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "icon_bought", bundle: ..., traitCollection: ...)`
@@ -1038,14 +1045,35 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 4 nibs.
   struct nib {
+    /// Nib `H5ViewController`.
+    static let h5ViewController = _R.nib._H5ViewController()
     /// Nib `ImageCollectionViewCell`.
     static let imageCollectionViewCell = _R.nib._ImageCollectionViewCell()
+    /// Nib `MsgTypeCell`.
+    static let msgTypeCell = _R.nib._MsgTypeCell()
+    /// Nib `ProBannerCell`.
+    static let proBannerCell = _R.nib._ProBannerCell()
+    
+    /// `UINib(name: "H5ViewController", in: bundle)`
+    static func h5ViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.h5ViewController)
+    }
     
     /// `UINib(name: "ImageCollectionViewCell", in: bundle)`
     static func imageCollectionViewCell(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.imageCollectionViewCell)
+    }
+    
+    /// `UINib(name: "MsgTypeCell", in: bundle)`
+    static func msgTypeCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.msgTypeCell)
+    }
+    
+    /// `UINib(name: "ProBannerCell", in: bundle)`
+    static func proBannerCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.proBannerCell)
     }
     
     fileprivate init() {}
@@ -1133,12 +1161,45 @@ struct _R: Rswift.Validatable {
   }
   
   struct nib {
+    struct _H5ViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "H5ViewController"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+      
+      fileprivate init() {}
+    }
+    
     struct _ImageCollectionViewCell: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "ImageCollectionViewCell"
       
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> ImageCollectionViewCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ImageCollectionViewCell
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct _MsgTypeCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "MsgTypeCell"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> MsgTypeCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? MsgTypeCell
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct _ProBannerCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "ProBannerCell"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> ProBannerCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ProBannerCell
       }
       
       fileprivate init() {}
@@ -1206,11 +1267,11 @@ struct _R: Rswift.Validatable {
       let name = "Me"
       
       static func validate() throws {
-        if UIKit.UIImage(named: "my_sex1") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'my_sex1' is used in storyboard 'Me', but couldn't be loaded.") }
         if UIKit.UIImage(named: "my_v1_big") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'my_v1_big' is used in storyboard 'Me', but couldn't be loaded.") }
         if UIKit.UIImage(named: "icon_sign") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icon_sign' is used in storyboard 'Me', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "howGetPoint") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'howGetPoint' is used in storyboard 'Me', but couldn't be loaded.") }
         if UIKit.UIImage(named: "icon_locatioin") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icon_locatioin' is used in storyboard 'Me', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "icon_howto") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icon_howto' is used in storyboard 'Me', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "my_sex1") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'my_sex1' is used in storyboard 'Me', but couldn't be loaded.") }
       }
       
       fileprivate init() {}

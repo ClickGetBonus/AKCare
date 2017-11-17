@@ -10,9 +10,8 @@ import UIKit
 import Gemini
 import DGElasticPullToRefresh
 
-class HomeVC: UIViewController {
+class HomeVC: UITableViewController {
 
-    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var proCollectView: GeminiCollectionView! {
         didSet {
             let nib = UINib(nibName: cellIdentifier, bundle: nil)
@@ -35,21 +34,22 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.navigationBar.isTranslucent = false
+        
+        guard let sid = AKUserManager.userAuth?.sid else {
+            self.showInfo("登录已过期, 请重新登录")
+            UIApplication.shared.keyWindow?.rootViewController = R.storyboard.login().instantiateInitialViewController()!
+            return
+        }
+        
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.barTintColor = NavBGColor
         
-//        self.navigationController?.navigationBar.backgroundColor = NavBGColor
         
-        
-        SwiftLoader.show(animated: true)
-        
-        delay(seconds: 4.0) { () -> () in
+        URLSessionClient.share.send(HomePageRequest(sid: sid)) { (response) in
             
             self.initSubviews()
-            SwiftLoader.hide()
-            self.scrollView.isHidden = false
+            self.tableView.isHidden = false
         }
         
     }
@@ -57,8 +57,8 @@ class HomeVC: UIViewController {
     func initSubviews() {
         
         
-        scrollView.backgroundColor = UIColor.white
-        scrollView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        tableView.backgroundColor = UIColor.white
+        tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
         proCollectView.delegate   = self
         proCollectView.dataSource = self
@@ -79,13 +79,13 @@ class HomeVC: UIViewController {
         
         let loadingView = DGElasticPullToRefreshLoadingViewCircle()
         loadingView.tintColor = UIColor.white
-        scrollView.dg_addPullToRefreshWithActionHandler({ [weak self] () -> Void in
+        tableView.dg_addPullToRefreshWithActionHandler({ [weak self] () -> Void in
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(1.5 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: {
-                self?.scrollView.dg_stopLoading()
+                self?.tableView.dg_stopLoading()
             })
             }, loadingView: loadingView)
-        scrollView.dg_setPullToRefreshFillColor(NavBGColor)
-        scrollView.dg_setPullToRefreshBackgroundColor(scrollView.backgroundColor!)
+        tableView.dg_setPullToRefreshFillColor(NavBGColor)
+        tableView.dg_setPullToRefreshBackgroundColor(tableView.backgroundColor!)
     }
     
     
@@ -94,7 +94,7 @@ class HomeVC: UIViewController {
 
 // MARK: - UIScrollViewDelegate
 extension HomeVC {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         self.proCollectView.animateVisibleCells()
     }
 }

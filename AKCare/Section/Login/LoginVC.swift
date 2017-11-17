@@ -18,14 +18,18 @@ class LoginVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     @IBAction func onLogin(_ sender: Any) {
         
         URLSessionClient.share.send(LoginRequest(userName: "门店文", passwd: "202cb962ac59075b964b07152d234b70")) { (response) in
             
-            UIApplication.shared.keyWindow?.rootViewController = R.storyboard.main.instantiateInitialViewController()
+            if let response = response {
+                
+                AKUserManager.userAuth = Auth(sid: response.sid, userName: response.userName, userType: response.userType)
+                UIApplication.shared.keyWindow?.rootViewController = R.storyboard.main.instantiateInitialViewController()
+            }
+            
         }
         
     }

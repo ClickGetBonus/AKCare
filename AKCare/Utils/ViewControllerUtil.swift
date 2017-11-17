@@ -16,7 +16,6 @@ extension UIViewController {
     
     func showInfo(_ text: String) {
         HUD.flash(.label("text"), delay: HUDPresentTimeInterval)
-        
     }
     
     func showError() {

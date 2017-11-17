@@ -128,6 +128,13 @@ extension UINavigationController {
     }
     
     fileprivate func setNeedsNavigationBackground(alpha: CGFloat) {
+        
+        if alpha == 0 {
+            self.navigationBar.isUserInteractionEnabled = false
+        } else {
+            self.navigationBar.isUserInteractionEnabled = true
+        }
+        
         let barBackgroundView = navigationBar.subviews[0]
         let valueForKey = barBackgroundView.value(forKey:)
         
@@ -152,6 +159,7 @@ extension UINavigationController {
         }
         
         barBackgroundView.alpha = alpha
+        
     }
 }
 
