@@ -11,7 +11,11 @@ import Gemini
 import DGElasticPullToRefresh
 
 class HomeVC: UITableViewController {
-
+    
+    
+    @IBOutlet weak var promLabelCurrent: UILabel!
+    @IBOutlet weak var promLabelMax: UILabel!
+    
     @IBOutlet weak var proCollectView: GeminiCollectionView! {
         didSet {
             let nib = UINib(nibName: cellIdentifier, bundle: nil)
@@ -30,39 +34,25 @@ class HomeVC: UITableViewController {
     
     fileprivate let images: [UIImage] = [#imageLiteral(resourceName: "pro_banner1"), #imageLiteral(resourceName: "pro_banner2"), #imageLiteral(resourceName: "pro_banner1"), #imageLiteral(resourceName: "pro_banner2"), #imageLiteral(resourceName: "pro_banner1"), #imageLiteral(resourceName: "pro_banner2"), #imageLiteral(resourceName: "pro_banner1"), #imageLiteral(resourceName: "pro_banner2")]
     
+    var response: HomePageResponse? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        guard let sid = AKUserManager.userAuth?.sid else {
-            self.showInfo("登录已过期, 请重新登录")
-            UIApplication.shared.keyWindow?.rootViewController = R.storyboard.login().instantiateInitialViewController()!
-            return
-        }
-        
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.barTintColor = NavBGColor
         
-        
-        URLSessionClient.share.send(HomePageRequest(sid: sid)) { (response) in
-            
+        SwiftLoader.show(animated: true)
+        AKApi.getHomePage { (response) in
+            if let prom = response?.proms {
+                self.promLabelMax.text = "\(prom.count)"
+            }
+            self.response = response
             self.initSubviews()
-            self.tableView.isHidden = false
+            SwiftLoader.hide()
         }
-        
     }
     
     func initSubviews() {
-        
-        
-        tableView.backgroundColor = UIColor.white
-        tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        
-        proCollectView.delegate   = self
-        proCollectView.dataSource = self
-        
         
         // Setting of UICollectionViewFlowLayout
         let layout = UICollectionViewPagingFlowLayout()
@@ -76,25 +66,55 @@ class HomeVC: UITableViewController {
         proCollectView.collectionViewLayout = layout
         proCollectView.decelerationRate = UIScrollViewDecelerationRateFast
         
+        proCollectView.delegate   = self
+        proCollectView.dataSource = self
         
-        let loadingView = DGElasticPullToRefreshLoadingViewCircle()
-        loadingView.tintColor = UIColor.white
-        tableView.dg_addPullToRefreshWithActionHandler({ [weak self] () -> Void in
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(1.5 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: {
-                self?.tableView.dg_stopLoading()
+        self.tableView.backgroundColor = UIColor.white
+        self.tableView.setupRefreshable(color: NavBGTranslucentColor) { [weak self] () -> Void in
+            
+            AKApi.getHomePage({ (response) in
+                if let response = response {
+                    self?.promLabelMax.text = "\(response.proms.count)"
+                    self?.promLabelCurrent.text = "1"
+                    self?.response = response
+                    self?.proCollectView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+                }
+                self?.updateViews()
+                self?.tableView.finishRefresh()
             })
-            }, loadingView: loadingView)
-        tableView.dg_setPullToRefreshFillColor(NavBGColor)
-        tableView.dg_setPullToRefreshBackgroundColor(tableView.backgroundColor!)
+            
+        }
     }
     
+    @IBAction func onSign(_ sender: UIButton) {
+        
+    }
     
+    @IBAction func onProductType(_ sender: UIButton) {
+    }
+    
+    @IBAction func onSchool(_ sender: UIButton) {
+    }
+    
+    func updateViews() {
+        self.tableView.reloadData()
+        self.proCollectView.reloadData()
+    }
 }
-
 
 // MARK: - UIScrollViewDelegate
 extension HomeVC {
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        if scrollView === self.proCollectView {
+            //更新当前选择活动下标
+            let offsetX = scrollView.contentOffset.x
+            guard offsetX > 0 else {
+                return
+            }
+            let index = Int(offsetX/ScreenWidth) + (Int(offsetX)%Int(ScreenWidth) > Int(ScreenWidth/2) ? 1 : 0)
+            self.promLabelCurrent.text = "\(index+1)"
+        }
         self.proCollectView.animateVisibleCells()
     }
 }
@@ -115,14 +135,27 @@ extension HomeVC: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images.count
+        return response?.proms.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! ImageCollectionViewCell
-        cell.configure(with: images[indexPath.row])
+//        cell.configure(with: images[indexPath.row])
+        if let pic = self.response?.proms[indexPath.row].pic {
+            cell.sampleImageView.ak_setImage(urlString: pic)
+        }
         self.proCollectView.animateCell(cell)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if let banner = response?.proms[indexPath.row] {
+            
+            let vc = R.storyboard.promotion.proInfoVC()!
+            vc.configure(banner: banner)
+            self.show(vc, sender: nil)
+        }
     }
 }
 

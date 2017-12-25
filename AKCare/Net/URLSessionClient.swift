@@ -12,7 +12,7 @@ import PKHUD
 
 struct URLSessionClient: Client {
     
-    var host: String = "http://120.76.216.103/dlsInterface/"
+    var host: String = "http://cx2.dlsapp.cn/dlsInterfaceV3/"
     
     static let share = URLSessionClient()
     
@@ -23,12 +23,8 @@ struct URLSessionClient: Client {
         request.httpMethod = r.method.rawValue
         
         var parameters = r.parameters
-        parameters["osn"] = "ios"
+        parameters["osn"] = "ndr"
         parameters["vid"] = 30100
-        
-        
-        
-        
         
         SwiftLoader.show(animated: true)
         
@@ -39,7 +35,7 @@ struct URLSessionClient: Client {
             SwiftLoader.hide()
             if let json = response.result.value {
                 
-                let baseResponse = BaseResponse.parse(json)
+                let baseResponse = Response.parse(json)
                 if let success = baseResponse?.success, success == true {
                     handler(T.Response.parse(json))
                 } else {

@@ -16,10 +16,13 @@
         <scene sceneID="Gr7-7e-fKl">
             <objects>
                 <navigationController id="aZe-Gm-UEp" customClass="BaseNavController" customModule="AKCare" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="hbP-5B-d7V">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hbP-5B-d7V">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.0" green="0.16862745098039217" blue="0.44705882352941173" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="0hI-3Q-pRg" kind="relationship" relationship="rootViewController" id="VWj-y7-aSj"/>
@@ -33,7 +36,7 @@
         <scene sceneID="LDx-n2-so3">
             <objects>
                 <tableViewController id="0hI-3Q-pRg" customClass="HomeVC" customModule="AKCare" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="PRz-w1-aAZ">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="PRz-w1-aAZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -130,6 +133,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sai-XT-chp" userLabel="SignButton">
                                                     <rect key="frame" x="34.5" y="194" width="62" height="66"/>
                                                     <state key="normal" image="icon_sign"/>
+                                                    <connections>
+                                                        <action selector="onSign:" destination="0hI-3Q-pRg" eventType="touchUpInside" id="AoX-oc-pf1"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日签到" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O7c-8h-nte">
                                                     <rect key="frame" x="35" y="268" width="61.5" height="18"/>
@@ -143,6 +149,9 @@
                                                         <constraint firstAttribute="height" constant="66" id="8R2-ST-wqW"/>
                                                     </constraints>
                                                     <state key="normal" image="icon_prod_type"/>
+                                                    <connections>
+                                                        <action selector="onProductType:" destination="0hI-3Q-pRg" eventType="touchUpInside" id="6Xb-eF-Pez"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商品分类" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebT-2u-Qoq">
                                                     <rect key="frame" x="157" y="268" width="61.5" height="18"/>
@@ -153,6 +162,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KCN-if-Uev" userLabel="SchoolButton">
                                                     <rect key="frame" x="278" y="194" width="63" height="66"/>
                                                     <state key="normal" image="icon_study"/>
+                                                    <connections>
+                                                        <action selector="onSchool:" destination="0hI-3Q-pRg" eventType="touchUpInside" id="YnB-Wb-z6U"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="漆彩学院" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zlW-Fi-26c">
                                                     <rect key="frame" x="279" y="268" width="61.5" height="18"/>
@@ -294,6 +306,7 @@
                             <outlet property="delegate" destination="0hI-3Q-pRg" id="JPP-0S-Uda"/>
                         </connections>
                     </tableView>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="eIl-hY-F2C">
                         <nil key="title"/>
                         <view key="titleView" contentMode="scaleToFill" id="zMU-uj-Anv">
@@ -314,6 +327,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="proCollectView" destination="WmU-AK-3V5" id="bPG-Mj-IU6"/>
+                        <outlet property="promLabelCurrent" destination="k4H-Lo-YRN" id="8Au-dW-r1a"/>
+                        <outlet property="promLabelMax" destination="9Ob-FH-Enl" id="gir-Xl-WFY"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1bH-hA-GUO" userLabel="First Responder" sceneMemberID="firstResponder"/>

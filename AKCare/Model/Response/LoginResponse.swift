@@ -8,9 +8,12 @@
 
 import Foundation
 
-class LoginResponse: BaseResponse {
+class LoginResponse: Response {
     
     var sid = ""
     var userName: String = ""
     var userType: String = ""
+    
+    var vidInvalid: Bool = false
+    var vstr: String = ""
 }

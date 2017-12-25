@@ -15,45 +15,62 @@ class PromotionVC: UIViewController {
         didSet {
             tableView.register(ProBannerCell.nib, forCellReuseIdentifier: ProBannerCell.className)
             
-            let loadingView = DGElasticPullToRefreshLoadingViewCircle()
-            loadingView.tintColor = UIColor.white
-            tableView.dg_addPullToRefreshWithActionHandler({ [weak self] () -> Void in
-                
-                self?.delay(seconds: HUDPresentTimeInterval, completion: {
-                    self?.tableView.dg_stopLoading()
+            tableView.setupRefreshable(color: NavBGTranslucentColor) {
+                self.delay(seconds: HUDPresentTimeInterval, completion: {
+                    self.tableView.dg_stopLoading()
                 })
-                
-                }, loadingView: loadingView)
-            tableView.dg_setPullToRefreshFillColor(NavBGColor)
-            tableView.dg_setPullToRefreshBackgroundColor(tableView.backgroundColor!)
+            }
         }
     }
     
-    var banners: [UIImage] = [#imageLiteral(resourceName: "pro_banner1"), #imageLiteral(resourceName: "pro_banner2"), #imageLiteral(resourceName: "pro_banner1"), #imageLiteral(resourceName: "pro_banner2"), #imageLiteral(resourceName: "pro_banner1"), #imageLiteral(resourceName: "pro_banner2")]
+    var proms: [PromBanner] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        
+        SwiftLoader.show(animated: true)
+        AKApi.getHomePage { (response) in
+            
+            if let proms = response?.proms {
+                self.proms = proms
+                self.updateViews()
+            }
+            SwiftLoader.hide()
+        }
+        
         navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.barTintColor = NavBGColor
     }
-
+    
+    func updateViews() {
+        
+        self.tableView.reloadData()
+    }
+    
 }
 
 extension PromotionVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return banners.count
+        return proms.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: ProBannerCell = tableView.dequeueReusableCell(withIdentifier: ProBannerCell.className) as! ProBannerCell
-        cell.bannerImageView.image = banners[indexPath.row]
+        cell.bannerImageView.ak_setImage(urlString: proms[indexPath.row].pic)
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let banner = proms[indexPath.row]
+        
+        let vc = R.storyboard.promotion.proInfoVC()!
+        vc.configure(banner: banner)
+        self.show(vc, sender: nil)
     }
 }

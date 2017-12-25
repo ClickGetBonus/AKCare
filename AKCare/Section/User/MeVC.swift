@@ -42,7 +42,9 @@ class MeVC: UIViewController {
                 self.meOptionView.addSubview(view)
             }
         }
+        
     }
+    
     
     func getOptionView(with option: MeOption) -> UIView? {
         
@@ -81,12 +83,22 @@ class MeVC: UIViewController {
     @objc func onClickOption(sender: UIButton) {
         
         print(optionTitles[sender.tag])
+        
+        if sender.tag == MeOption.controlGuide.rawValue {
+            let vc = H5ViewController(url: AKExpRuleUrl)
+            vc.title = "操作指引"
+            self.show(vc, sender: nil)
+        }
     }
     
     
     @IBAction func goExpRule(_ sender: Any) {
         let vc = H5ViewController(url: AKExpRuleUrl)
+        vc.title = "如何获取成长值"
         self.show(vc, sender: nil)
     }
     
+    
 }
+
+

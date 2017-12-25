@@ -11,12 +11,14 @@ import UIKit
 class H5ViewController: UIViewController {
 
     @IBOutlet weak var webView: UIWebView!
+    var complete: (() -> Void)?
     
     var url: URL
     
     init(url: URL) {
         self.url = url
         super.init(nibName: "H5ViewController", bundle: nil)
+        self.hidesBottomBarWhenPushed = true
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -28,6 +30,16 @@ class H5ViewController: UIViewController {
         
         self.navBarBgAlpha = 1.0
         self.webView.loadRequest(URLRequest(url: self.url))
+        
+        self.setupBackItem(selector: #selector(UIViewController.onBack))
+    }
+    
+    override func onBack() {
+        
+        if complete != nil {
+            complete!()
+        }
+        self.navigationController?.popViewController(animated: true)
     }
     
 }

@@ -10,11 +10,9 @@ import Foundation
 import HandyJSON
 import SwiftyJSON
 
-class BaseResponse: Decodable, HandyJSON {
+class Response: Decodable, HandyJSON {
     var success: Bool = false
     var resStr: String = ""
-    var vidInvalid: Bool = false
-    var vstr: String = ""
     
     required init() {}
     

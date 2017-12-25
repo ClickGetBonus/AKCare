@@ -31,7 +31,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 144 images.
+  /// This `R.image` struct is generated, and contains static references to 145 images.
   struct image {
     /// Image `LaunchImage`.
     static let launchImage = Rswift.ImageResource(bundle: R.hostingBundle, name: "LaunchImage")
@@ -47,6 +47,8 @@ struct R: Rswift.Validatable {
     static let act_left_bg = Rswift.ImageResource(bundle: R.hostingBundle, name: "act_left_bg")
     /// Image `arrow`.
     static let arrow = Rswift.ImageResource(bundle: R.hostingBundle, name: "arrow")
+    /// Image `back`.
+    static let back = Rswift.ImageResource(bundle: R.hostingBundle, name: "back")
     /// Image `bannerProduct`.
     static let bannerProduct = Rswift.ImageResource(bundle: R.hostingBundle, name: "bannerProduct")
     /// Image `bannerPromotion`.
@@ -355,6 +357,11 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "arrow", bundle: ..., traitCollection: ...)`
     static func arrow(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.arrow, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "back", bundle: ..., traitCollection: ...)`
+    static func back(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.back, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "bannerProduct", bundle: ..., traitCollection: ...)`
@@ -1045,7 +1052,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 4 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 5 nibs.
   struct nib {
     /// Nib `H5ViewController`.
     static let h5ViewController = _R.nib._H5ViewController()
@@ -1055,6 +1062,8 @@ struct R: Rswift.Validatable {
     static let msgTypeCell = _R.nib._MsgTypeCell()
     /// Nib `ProBannerCell`.
     static let proBannerCell = _R.nib._ProBannerCell()
+    /// Nib `SignView`.
+    static let signView = _R.nib._SignView()
     
     /// `UINib(name: "H5ViewController", in: bundle)`
     static func h5ViewController(_: Void = ()) -> UIKit.UINib {
@@ -1076,6 +1085,11 @@ struct R: Rswift.Validatable {
       return UIKit.UINib(resource: R.nib.proBannerCell)
     }
     
+    /// `UINib(name: "SignView", in: bundle)`
+    static func signView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.signView)
+    }
+    
     fileprivate init() {}
   }
   
@@ -1093,20 +1107,25 @@ struct R: Rswift.Validatable {
   struct storyboard {
     /// Storyboard `Home`.
     static let home = _R.storyboard.home()
+    /// Storyboard `Infomation`.
+    static let infomation = _R.storyboard.infomation()
     /// Storyboard `Login`.
     static let login = _R.storyboard.login()
     /// Storyboard `Main`.
     static let main = _R.storyboard.main()
     /// Storyboard `Me`.
     static let me = _R.storyboard.me()
-    /// Storyboard `Message`.
-    static let message = _R.storyboard.message()
     /// Storyboard `Promotion`.
     static let promotion = _R.storyboard.promotion()
     
     /// `UIStoryboard(name: "Home", bundle: ...)`
     static func home(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.home)
+    }
+    
+    /// `UIStoryboard(name: "Infomation", bundle: ...)`
+    static func infomation(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.infomation)
     }
     
     /// `UIStoryboard(name: "Login", bundle: ...)`
@@ -1122,11 +1141,6 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Me", bundle: ...)`
     static func me(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.me)
-    }
-    
-    /// `UIStoryboard(name: "Message", bundle: ...)`
-    static func message(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.message)
     }
     
     /// `UIStoryboard(name: "Promotion", bundle: ...)`
@@ -1158,9 +1172,14 @@ struct R: Rswift.Validatable {
 struct _R: Rswift.Validatable {
   static func validate() throws {
     try storyboard.validate()
+    try nib.validate()
   }
   
-  struct nib {
+  struct nib: Rswift.Validatable {
+    static func validate() throws {
+      try _SignView.validate()
+    }
+    
     struct _H5ViewController: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "H5ViewController"
@@ -1205,6 +1224,21 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
+    struct _SignView: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "SignView"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> SignView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? SignView
+      }
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "sign_ok", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'sign_ok' is used in nib 'SignView', but couldn't be loaded.") }
+      }
+      
+      fileprivate init() {}
+    }
+    
     fileprivate init() {}
   }
   
@@ -1214,7 +1248,7 @@ struct _R: Rswift.Validatable {
       try login.validate()
       try me.validate()
       try home.validate()
-      try message.validate()
+      try infomation.validate()
     }
     
     struct home: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
@@ -1233,6 +1267,19 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "bannerSchool") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'bannerSchool' is used in storyboard 'Home', but couldn't be loaded.") }
         if UIKit.UIImage(named: "hotInfo_right_bg") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'hotInfo_right_bg' is used in storyboard 'Home', but couldn't be loaded.") }
         if UIKit.UIImage(named: "hotInfo_left_bg") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'hotInfo_left_bg' is used in storyboard 'Home', but couldn't be loaded.") }
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct infomation: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = BaseNavController
+      
+      let bundle = R.hostingBundle
+      let name = "Infomation"
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "NavIcon") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'NavIcon' is used in storyboard 'Infomation', but couldn't be loaded.") }
       }
       
       fileprivate init() {}
@@ -1277,27 +1324,21 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    struct message: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = BaseNavController
-      
-      let bundle = R.hostingBundle
-      let name = "Message"
-      
-      static func validate() throws {
-        if UIKit.UIImage(named: "NavIcon") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'NavIcon' is used in storyboard 'Message', but couldn't be loaded.") }
-      }
-      
-      fileprivate init() {}
-    }
-    
     struct promotion: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
       typealias InitialController = BaseNavController
       
       let bundle = R.hostingBundle
       let name = "Promotion"
+      let proInfoVC = StoryboardViewControllerResource<ProInfoVC>(identifier: "ProInfoVC")
+      
+      func proInfoVC(_: Void = ()) -> ProInfoVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: proInfoVC)
+      }
       
       static func validate() throws {
         if UIKit.UIImage(named: "NavIcon") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'NavIcon' is used in storyboard 'Promotion', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "bg_200") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'bg_200' is used in storyboard 'Promotion', but couldn't be loaded.") }
+        if _R.storyboard.promotion().proInfoVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'proInfoVC' could not be loaded from storyboard 'Promotion' as 'ProInfoVC'.") }
       }
       
       fileprivate init() {}
