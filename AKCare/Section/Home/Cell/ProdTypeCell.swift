@@ -9,16 +9,13 @@
 import UIKit
 
 class ProdTypeCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
+    static let CellHeight: CGFloat = 60
+    @IBOutlet weak var contentBackgroundView: UIView!
+    
+    @IBOutlet weak var productLabel: UILabel!
+    
+    override func awakeFromNib() {
+        contentBackgroundView.setCornerRadius(5.0)
+    }
 }

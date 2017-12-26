@@ -9,16 +9,17 @@
 import UIKit
 
 class ProdTypeHeadCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    static let CellHeight: CGFloat = 80.0
+    
+    @IBOutlet weak var arrow: UIImageView!
+    @IBOutlet weak var typeLabel: UILabel!
+    
+    func select() {
+        self.arrow.rotation(by: Double.pi)
     }
     
+    func deselect() {
+        self.arrow.rotation(by: Double.pi)
+    }
 }

@@ -10,7 +10,7 @@ import Foundation
 import HandyJSON
 import SwiftyJSON
 
-class Response: Decodable, HandyJSON {
+class BaseResponse: Decodable, HandyJSON {
     var success: Bool = false
     var resStr: String = ""
     

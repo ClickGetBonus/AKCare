@@ -12,6 +12,9 @@ import DGElasticPullToRefresh
 
 class HomeVC: UITableViewController {
     
+    @IBOutlet weak var hotLeftButton: UIButton!
+    @IBOutlet weak var hotRightTopButton: UIButton!
+    @IBOutlet weak var hotRightBottomButton: UIButton!
     
     @IBOutlet weak var promLabelCurrent: UILabel!
     @IBOutlet weak var promLabelMax: UILabel!
@@ -48,6 +51,7 @@ class HomeVC: UITableViewController {
             }
             self.response = response
             self.initSubviews()
+            self.updateViews()
             SwiftLoader.hide()
         }
     }
@@ -87,18 +91,37 @@ class HomeVC: UITableViewController {
     }
     
     @IBAction func onSign(_ sender: UIButton) {
-        
+        SignView.show(in: 3)
     }
     
     @IBAction func onProductType(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "goProdType", sender: nil)
     }
     
     @IBAction func onSchool(_ sender: UIButton) {
     }
     
     func updateViews() {
+        if let bannerLeft = self.response?.dynLeft {
+            self.hotLeftButton.ak_setImage(urlString: bannerLeft.pic)
+        }
+        if let bannerRightTop = self.response?.dynRightTop {
+            self.hotRightTopButton.ak_setImage(urlString: bannerRightTop.pic)
+        }
+        if let bannerRightBottom = self.response?.dynRightBtm {
+            self.hotRightBottomButton.ak_setImage(urlString: bannerRightBottom.pic)
+        }
         self.tableView.reloadData()
         self.proCollectView.reloadData()
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "goProdType" {
+            
+//            let vc: ProdTypeVC = segue.destination as! ProdTypeVC
+        }
     }
 }
 

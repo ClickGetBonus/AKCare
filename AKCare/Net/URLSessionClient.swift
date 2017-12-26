@@ -35,7 +35,7 @@ struct URLSessionClient: Client {
             SwiftLoader.hide()
             if let json = response.result.value {
                 
-                let baseResponse = Response.parse(json)
+                let baseResponse = BaseResponse.parse(json)
                 if let success = baseResponse?.success, success == true {
                     handler(T.Response.parse(json))
                 } else {

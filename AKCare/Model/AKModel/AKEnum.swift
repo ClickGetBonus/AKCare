@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+enum HotClickType: Int {
+    case promotion = 0
+    case product = 1
+    case infomation = 2
+}

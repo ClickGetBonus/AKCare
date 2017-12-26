@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+class ProdTypeResponse: BaseResponse {
+    var firstLev: [ProdType] = []
+}
+
+

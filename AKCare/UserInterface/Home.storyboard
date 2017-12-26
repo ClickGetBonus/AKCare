@@ -150,7 +150,7 @@
                                                     </constraints>
                                                     <state key="normal" image="icon_prod_type"/>
                                                     <connections>
-                                                        <action selector="onProductType:" destination="0hI-3Q-pRg" eventType="touchUpInside" id="6Xb-eF-Pez"/>
+                                                        <action selector="onProductType:" destination="0hI-3Q-pRg" eventType="touchUpInside" id="uyM-sC-fRC"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商品分类" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebT-2u-Qoq">
@@ -173,11 +173,11 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EtG-cL-voV">
-                                                    <rect key="frame" x="190" y="390" width="180" height="64"/>
+                                                    <rect key="frame" x="190" y="390" width="168.5" height="60"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="EtG-cL-voV" secondAttribute="height" multiplier="180:64" id="VL6-ti-uS9"/>
                                                     </constraints>
-                                                    <state key="normal" image="bannerProduct"/>
+                                                    <state key="normal" image="bg_180_64"/>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dgn-4k-fiW">
                                                     <rect key="frame" x="71" y="313" width="277" height="26"/>
@@ -223,11 +223,11 @@
                                                     </constraints>
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vz7-6n-V8s">
-                                                    <rect key="frame" x="4" y="390" width="180" height="165"/>
-                                                    <state key="normal" image="bannerPromotion"/>
+                                                    <rect key="frame" x="15.5" y="390" width="168.5" height="126.5"/>
+                                                    <state key="normal" image="bg_180_135"/>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hW1-Em-vjl" userLabel="AnchorCenter">
-                                                    <rect key="frame" x="186" y="390" width="2" height="165"/>
+                                                    <rect key="frame" x="186" y="390" width="2" height="126.5"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="2" id="kO9-tz-rG6"/>
@@ -237,11 +237,11 @@
                                                     <rect key="frame" x="0.0" y="311" width="71" height="30"/>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sYx-SH-imV">
-                                                    <rect key="frame" x="190" y="491" width="180" height="64"/>
+                                                    <rect key="frame" x="190" y="456.5" width="168.5" height="60"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="sYx-SH-imV" secondAttribute="height" multiplier="180:64" id="bCU-cO-Pts"/>
                                                     </constraints>
-                                                    <state key="normal" image="bannerSchool"/>
+                                                    <state key="normal" image="bg_180_64"/>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -249,7 +249,8 @@
                                                 <constraint firstItem="hW1-Em-vjl" firstAttribute="height" secondItem="Vz7-6n-V8s" secondAttribute="height" id="4pa-T5-Uh5"/>
                                                 <constraint firstItem="J95-0N-2Ej" firstAttribute="leading" secondItem="bDp-JP-Wil" secondAttribute="leading" id="5V7-EC-LYg"/>
                                                 <constraint firstItem="hW1-Em-vjl" firstAttribute="top" secondItem="W9m-hf-bSm" secondAttribute="bottom" constant="12" id="6Q6-Gl-UVE"/>
-                                                <constraint firstItem="Vz7-6n-V8s" firstAttribute="width" secondItem="Vz7-6n-V8s" secondAttribute="height" multiplier="180:165" id="7aY-a5-yGC"/>
+                                                <constraint firstItem="Vz7-6n-V8s" firstAttribute="width" secondItem="bDp-JP-Wil" secondAttribute="width" multiplier="0.45" id="6r6-Nu-Ldf"/>
+                                                <constraint firstItem="Vz7-6n-V8s" firstAttribute="width" secondItem="Vz7-6n-V8s" secondAttribute="height" multiplier="180:135" id="7aY-a5-yGC"/>
                                                 <constraint firstItem="EtG-cL-voV" firstAttribute="leading" secondItem="hW1-Em-vjl" secondAttribute="trailing" constant="2" id="7cY-J7-iZn"/>
                                                 <constraint firstItem="2gt-C9-JUl" firstAttribute="centerY" secondItem="tLC-qV-HGn" secondAttribute="centerY" id="A1J-e4-5TW"/>
                                                 <constraint firstItem="Dgn-4k-fiW" firstAttribute="bottom" secondItem="2gt-C9-JUl" secondAttribute="bottom" constant="-2" id="BtC-B6-Upz"/>
@@ -262,6 +263,7 @@
                                                 <constraint firstItem="ebT-2u-Qoq" firstAttribute="top" secondItem="EHw-dJ-Kop" secondAttribute="bottom" constant="8" id="HIg-08-JRr"/>
                                                 <constraint firstItem="O7c-8h-nte" firstAttribute="centerX" secondItem="sai-XT-chp" secondAttribute="centerX" id="Iel-MM-NGb"/>
                                                 <constraint firstItem="WYP-RF-wtx" firstAttribute="centerX" secondItem="EHw-dJ-Kop" secondAttribute="centerX" id="Jve-7K-e2O"/>
+                                                <constraint firstItem="EtG-cL-voV" firstAttribute="width" secondItem="Vz7-6n-V8s" secondAttribute="width" id="L7R-pr-38Z"/>
                                                 <constraint firstItem="3bO-HU-LRE" firstAttribute="top" secondItem="Dgn-4k-fiW" secondAttribute="bottom" constant="12" id="NdI-Pj-TO8"/>
                                                 <constraint firstAttribute="trailing" secondItem="J95-0N-2Ej" secondAttribute="trailing" id="PLt-6o-WOd"/>
                                                 <constraint firstItem="tLC-qV-HGn" firstAttribute="top" secondItem="WYP-RF-wtx" secondAttribute="bottom" constant="12" id="QMj-fp-Qju"/>
@@ -326,21 +328,96 @@
                         </view>
                     </navigationItem>
                     <connections>
+                        <outlet property="hotLeftButton" destination="Vz7-6n-V8s" id="7jC-Xr-83v"/>
+                        <outlet property="hotRightBottomButton" destination="sYx-SH-imV" id="M4H-e4-QQC"/>
+                        <outlet property="hotRightTopButton" destination="EtG-cL-voV" id="dS0-yU-Xue"/>
                         <outlet property="proCollectView" destination="WmU-AK-3V5" id="bPG-Mj-IU6"/>
                         <outlet property="promLabelCurrent" destination="k4H-Lo-YRN" id="8Au-dW-r1a"/>
                         <outlet property="promLabelMax" destination="9Ob-FH-Enl" id="gir-Xl-WFY"/>
+                        <segue destination="L30-hR-bS1" kind="show" identifier="goProdType" id="K0N-gV-Qv5"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1bH-hA-GUO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-218.40000000000001" y="218.1409295352324"/>
         </scene>
+        <!--商品分类-->
+        <scene sceneID="vfz-rB-bKU">
+            <objects>
+                <viewController title="商品分类" hidesBottomBarWhenPushed="YES" id="L30-hR-bS1" customClass="ProdTypeVC" customModule="AKCare" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Sbi-fu-iZa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="19E-bb-eYW">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="W0D-dT-wtd" firstAttribute="bottom" secondItem="19E-bb-eYW" secondAttribute="bottom" id="E0J-YO-q0c"/>
+                            <constraint firstItem="19E-bb-eYW" firstAttribute="top" secondItem="W0D-dT-wtd" secondAttribute="top" id="PT2-qK-a9m"/>
+                            <constraint firstItem="W0D-dT-wtd" firstAttribute="trailing" secondItem="19E-bb-eYW" secondAttribute="trailing" id="fX6-Pn-1rj"/>
+                            <constraint firstItem="19E-bb-eYW" firstAttribute="leading" secondItem="W0D-dT-wtd" secondAttribute="leading" id="z0y-5q-7hQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="W0D-dT-wtd"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="19E-bb-eYW" id="VlR-Ku-rug"/>
+                        <segue destination="Qdm-zk-LI2" kind="show" id="URT-gy-k1V"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nfj-Dw-spF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="670" y="218"/>
+        </scene>
+        <!--商品-->
+        <scene sceneID="pW2-m0-5Um">
+            <objects>
+                <viewController title="商品" id="Qdm-zk-LI2" customClass="ProdListVC" customModule="AKCare" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FZE-6s-3xL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="ToS-If-JJw">
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="534-xk-1v4"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="P3w-6o-b2E">
+                                <rect key="frame" x="0.0" y="120" width="375" height="547"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="U3J-yL-PNz" firstAttribute="trailing" secondItem="P3w-6o-b2E" secondAttribute="trailing" id="JAi-Ze-hDU"/>
+                            <constraint firstItem="ToS-If-JJw" firstAttribute="top" secondItem="U3J-yL-PNz" secondAttribute="top" id="TnG-Fb-2EZ"/>
+                            <constraint firstItem="ToS-If-JJw" firstAttribute="trailing" secondItem="U3J-yL-PNz" secondAttribute="trailing" id="hUb-2R-9ca"/>
+                            <constraint firstItem="P3w-6o-b2E" firstAttribute="leading" secondItem="U3J-yL-PNz" secondAttribute="leading" id="iht-Kt-edk"/>
+                            <constraint firstItem="ToS-If-JJw" firstAttribute="leading" secondItem="U3J-yL-PNz" secondAttribute="leading" id="jc0-t7-qag"/>
+                            <constraint firstItem="U3J-yL-PNz" firstAttribute="bottom" secondItem="P3w-6o-b2E" secondAttribute="bottom" id="mtd-cm-7wh"/>
+                            <constraint firstItem="P3w-6o-b2E" firstAttribute="top" secondItem="ToS-If-JJw" secondAttribute="bottom" id="rJW-mb-fAZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="U3J-yL-PNz"/>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="ToS-If-JJw" id="VY3-V5-Xxa"/>
+                        <outlet property="tableView" destination="P3w-6o-b2E" id="XUf-ud-ly2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="awv-WY-CgI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1423" y="218"/>
+        </scene>
     </scenes>
     <resources>
         <image name="NavIcon" width="77" height="24"/>
-        <image name="bannerProduct" width="180" height="64"/>
-        <image name="bannerPromotion" width="180" height="165"/>
-        <image name="bannerSchool" width="180" height="64"/>
+        <image name="bg_180_135" width="90" height="67"/>
+        <image name="bg_180_64" width="90" height="32"/>
         <image name="hotInfo_left_bg" width="71" height="30"/>
         <image name="hotInfo_right_bg" width="19" height="30"/>
         <image name="icon_prod_type" width="62" height="66"/>

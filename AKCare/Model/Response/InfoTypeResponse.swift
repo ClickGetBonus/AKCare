@@ -8,7 +8,7 @@
 
 import Foundation
 
-class InfoTypeResponse: Response {
+class InfoTypeResponse: BaseResponse {
     
     var types: [InfoType] = []
 }

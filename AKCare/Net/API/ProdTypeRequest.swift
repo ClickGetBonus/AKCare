@@ -7,3 +7,19 @@
 //
 
 import Foundation
+import Alamofire
+import SwiftyJSON
+
+struct ProdTypeRequest: Request {
+    
+    typealias Response = ProdTypeResponse
+    
+    let path = "listProdType.do"
+    let method: HTTPMethod = .post
+    
+    var sid: String
+    
+    var parameters: [String: Any] { return ["sid" : sid] }
+}
+
+

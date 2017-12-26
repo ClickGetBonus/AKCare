@@ -8,7 +8,7 @@
 
 import Foundation
 
-class HomePageResponse: Response {
+class HomePageResponse: BaseResponse {
     
     var haveTigerGame: Bool = false
     var dynLeft: HotBanner?

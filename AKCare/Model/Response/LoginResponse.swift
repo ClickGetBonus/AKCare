@@ -8,7 +8,7 @@
 
 import Foundation
 
-class LoginResponse: Response {
+class LoginResponse: BaseResponse {
     
     var sid = ""
     var userName: String = ""

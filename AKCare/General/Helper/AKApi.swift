@@ -48,6 +48,25 @@ class AKApi {
         }
     }
     
+    
+    static func getProdType(_ complete: @escaping (ProdTypeRequest.Response?) -> Void) {
+        
+        guard let sid = self.verifyAuth() else {
+            complete(nil)
+            return
+        }
+        
+        URLSessionClient.share.send(ProdTypeRequest(sid: sid)) { (response) in
+            complete(response)
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
     private static func verifyAuth() -> String? {
         
         
@@ -59,4 +78,6 @@ class AKApi {
             return nil
         }
     }
+    
+    
 }

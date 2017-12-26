@@ -10,20 +10,23 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignView" customModule="AKCare" customModuleProvider="target">
+            <connections>
+                <outlet property="closeLabel" destination="cuD-nT-BNn" id="BCq-eJ-e2c"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SignView" customModule="AKCare" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G6Y-fO-WMi">
-                    <rect key="frame" x="0.0" y="4" width="375" height="659"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="cKz-Qu-YIw">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="659"/>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G6Y-fO-WMi">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="cKz-Qu-YIw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </view>
-                    <blurEffect style="light"/>
+                    <blurEffect style="dark"/>
                 </visualEffectView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sign_ok" translatesAutoresizingMaskIntoConstraints="NO" id="f3N-a3-osG">
                     <rect key="frame" x="49.5" y="165.5" width="276" height="276"/>
@@ -31,21 +34,34 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3秒后自动关闭" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cuD-nT-BNn">
                     <rect key="frame" x="130" y="453.5" width="114.5" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="textColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FW4-Sd-DWN">
+                    <rect key="frame" x="265" y="190.5" width="60" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="ff9-6x-7bt"/>
+                        <constraint firstAttribute="height" constant="50" id="vcV-XW-Jcb"/>
+                    </constraints>
+                    <connections>
+                        <action selector="onClose:" destination="-1" eventType="touchUpInside" id="69b-Uw-8BW"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="FW4-Sd-DWN" firstAttribute="trailing" secondItem="f3N-a3-osG" secondAttribute="trailing" id="8NU-xZ-DBS"/>
                 <constraint firstItem="cuD-nT-BNn" firstAttribute="centerX" secondItem="f3N-a3-osG" secondAttribute="centerX" id="C4K-yq-cRl"/>
                 <constraint firstItem="f3N-a3-osG" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" constant="-40" id="E5P-KU-m5g"/>
+                <constraint firstItem="FW4-Sd-DWN" firstAttribute="top" secondItem="f3N-a3-osG" secondAttribute="top" constant="25" id="E9F-2n-uXT"/>
+                <constraint firstItem="G6Y-fO-WMi" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="F83-6a-Kh1"/>
+                <constraint firstItem="G6Y-fO-WMi" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="O6u-oi-4hf"/>
                 <constraint firstItem="cuD-nT-BNn" firstAttribute="top" secondItem="f3N-a3-osG" secondAttribute="bottom" constant="12" id="Pfo-qS-7Nr"/>
                 <constraint firstItem="f3N-a3-osG" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="XBT-pb-iJH"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="G6Y-fO-WMi" secondAttribute="bottom" id="okC-NZ-4YL"/>
+                <constraint firstItem="G6Y-fO-WMi" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="wmG-Lt-yIr"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <connections>
-                <outlet property="closeLabel" destination="cuD-nT-BNn" id="dro-fY-QOJ"/>
-            </connections>
             <point key="canvasLocation" x="-96.5" y="-20.5"/>
         </view>
     </objects>

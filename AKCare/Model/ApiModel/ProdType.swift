@@ -7,3 +7,10 @@
 //
 
 import Foundation
+import HandyJSON
+
+struct ProdType: HandyJSON {
+    var children: [ProdType] = []
+    var id: String = ""
+    var name: String = ""
+}

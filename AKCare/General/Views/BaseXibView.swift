@@ -39,7 +39,7 @@ import UIKit
         }
         self.contentView = self.loadViewWithNibName(self.xibName, owner: self)
         self.contentView.frame = self.bounds
-        self.contentView.backgroundColor = UIColor.clear
+        self.contentView.backgroundColor = self.backgroundColor
         self.addSubview(self.contentView)
     }
 }

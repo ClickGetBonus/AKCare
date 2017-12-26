@@ -8,7 +8,7 @@
 
 import Foundation
 
-class GetPromResponse: Response {
+class GetPromResponse: BaseResponse {
     var actId: String = ""
     var actStarted: Bool = false
     var haveActSet: Bool = false
