@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6104026C1FAACFA7003A5F3B /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6104026B1FAACFA6003A5F3B /* R.generated.swift */; };
 		610402701FAAF13C003A5F3B /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6104026F1FAAF13C003A5F3B /* Response.swift */; };
 		610DF3EC1FCD0A2E001609C1 /* AKHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610DF3EB1FCD0A2E001609C1 /* AKHelper.swift */; };
 		610DF3EE1FCD0ADF001609C1 /* InfoType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610DF3ED1FCD0ADF001609C1 /* InfoType.swift */; };
 		610DF3F01FCD11F3001609C1 /* InfoTypeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610DF3EF1FCD11F3001609C1 /* InfoTypeResponse.swift */; };
 		610DF3F21FCD15D0001609C1 /* AKApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610DF3F11FCD15D0001609C1 /* AKApi.swift */; };
+		611CC4901FF333DB00D4C5BA /* ProdListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611CC48F1FF333DB00D4C5BA /* ProdListRequest.swift */; };
 		6139F1181FBC141100C3FB4F /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6139F1171FBC141100C3FB4F /* Home.storyboard */; };
 		6139F11D1FBC1CCF00C3FB4F /* ColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6139F11C1FBC1CCF00C3FB4F /* ColorExt.swift */; };
 		6139F11F1FBC1EE800C3FB4F /* ETNavBarTransparent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6139F11E1FBC1EE800C3FB4F /* ETNavBarTransparent.swift */; };
@@ -106,12 +106,12 @@
 /* Begin PBXFileReference section */
 		21BDF86069E1B29A9F2C571F /* Pods-AKCare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AKCare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AKCare/Pods-AKCare.debug.xcconfig"; sourceTree = "<group>"; };
 		5289921369D6377B59EF6B4A /* Pods-AKCare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AKCare.release.xcconfig"; path = "Pods/Target Support Files/Pods-AKCare/Pods-AKCare.release.xcconfig"; sourceTree = "<group>"; };
-		6104026B1FAACFA6003A5F3B /* R.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		6104026F1FAAF13C003A5F3B /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		610DF3EB1FCD0A2E001609C1 /* AKHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKHelper.swift; sourceTree = "<group>"; };
 		610DF3ED1FCD0ADF001609C1 /* InfoType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoType.swift; sourceTree = "<group>"; };
 		610DF3EF1FCD11F3001609C1 /* InfoTypeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTypeResponse.swift; sourceTree = "<group>"; };
 		610DF3F11FCD15D0001609C1 /* AKApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKApi.swift; sourceTree = "<group>"; };
+		611CC48F1FF333DB00D4C5BA /* ProdListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdListRequest.swift; sourceTree = "<group>"; };
 		6139F1171FBC141100C3FB4F /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		6139F11C1FBC1CCF00C3FB4F /* ColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExt.swift; sourceTree = "<group>"; };
 		6139F11E1FBC1EE800C3FB4F /* ETNavBarTransparent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETNavBarTransparent.swift; sourceTree = "<group>"; };
@@ -181,6 +181,7 @@
 		61B88F281FBE832D009AB8D8 /* ViewUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUtil.swift; sourceTree = "<group>"; };
 		61C1FF611FC27114008AF778 /* HomePageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageResponse.swift; sourceTree = "<group>"; };
 		61C1FF631FC271B1008AF778 /* PromBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromBanner.swift; sourceTree = "<group>"; };
+		61C94ACE1FF3704E006199CC /* R.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		61DEE0271FECEA4C00E03CD8 /* SignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignView.swift; sourceTree = "<group>"; };
 		61DEE0291FECEA5D00E03CD8 /* SignView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignView.xib; sourceTree = "<group>"; };
 		61DEE02B1FECECD800E03CD8 /* BaseXibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseXibView.swift; sourceTree = "<group>"; };
@@ -269,6 +270,7 @@
 				614F61601FC3C8E9002390D4 /* InfoTypeRequest.swift */,
 				618F78EE1FD15C3A0034B7EA /* PromInfoRequest.swift */,
 				61A8CE371FF202B900662DA7 /* ProdTypeRequest.swift */,
+				611CC48F1FF333DB00D4C5BA /* ProdListRequest.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -330,7 +332,6 @@
 				6139F11E1FBC1EE800C3FB4F /* ETNavBarTransparent.swift */,
 				617B992F1FB0435F00EC3395 /* AKUserManager.swift */,
 				610DF3EB1FCD0A2E001609C1 /* AKHelper.swift */,
-				610DF3F11FCD15D0001609C1 /* AKApi.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -478,6 +479,7 @@
 		617F22591FA080B500534D27 /* Net */ = {
 			isa = PBXGroup;
 			children = (
+				610DF3F11FCD15D0001609C1 /* AKApi.swift */,
 				61E008731FAAF86A0039364A /* Client.swift */,
 				61E008751FAAF9A20039364A /* URLSessionClient.swift */,
 				61E008771FAAFB9B0039364A /* Decodable.swift */,
@@ -492,6 +494,7 @@
 		617F225A1FA080F600534D27 /* SupportFile */ = {
 			isa = PBXGroup;
 			children = (
+				61C94ACE1FF3704E006199CC /* R.generated.swift */,
 				617F225B1FA080F600534D27 /* Info.plist */,
 			);
 			path = SupportFile;
@@ -501,7 +504,6 @@
 			isa = PBXGroup;
 			children = (
 				617F22211FA0749E00534D27 /* Assets.xcassets */,
-				6104026B1FAACFA6003A5F3B /* R.generated.swift */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -597,7 +599,7 @@
 			buildConfigurationList = 617F223F1FA0749F00534D27 /* Build configuration list for PBXNativeTarget "AKCare" */;
 			buildPhases = (
 				731CC8CB63BF10E4AE404ABB /* [CP] Check Pods Manifest.lock */,
-				6104026A1FAABFE6003A5F3B /* ShellScript */,
+				611F86F61FF33D640096A017 /* ShellScript */,
 				617F22131FA0749E00534D27 /* Sources */,
 				617F22141FA0749E00534D27 /* Frameworks */,
 				617F22151FA0749E00534D27 /* Resources */,
@@ -750,7 +752,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AKCare/Pods-AKCare-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6104026A1FAABFE6003A5F3B /* ShellScript */ = {
+		611F86F61FF33D640096A017 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -821,6 +823,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				610DF3F01FCD11F3001609C1 /* InfoTypeResponse.swift in Sources */,
+				611CC4901FF333DB00D4C5BA /* ProdListRequest.swift in Sources */,
 				618E199D1FECE6FF00821538 /* HotBanner.swift in Sources */,
 				6139F11F1FBC1EE800C3FB4F /* ETNavBarTransparent.swift in Sources */,
 				618F78ED1FD151D60034B7EA /* ProInfoVC.swift in Sources */,
@@ -859,7 +862,6 @@
 				61A8CE411FF25D8D00662DA7 /* ProdCell.swift in Sources */,
 				6139F12B1FBC426B00C3FB4F /* ImageCollectionViewCell.swift in Sources */,
 				618F78EF1FD15C3A0034B7EA /* PromInfoRequest.swift in Sources */,
-				6104026C1FAACFA7003A5F3B /* R.generated.swift in Sources */,
 				6144326F1FA8621F00C7A99A /* InfomationVC.swift in Sources */,
 				618FD2601FBED584004C2B96 /* ProBannerCell.swift in Sources */,
 				617B99301FB0435F00EC3395 /* AKUserManager.swift in Sources */,

@@ -17,8 +17,15 @@ class ProdListVC: UIViewController {
         }
     }
     
+    var prodTypeId: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    }
+    
+    func configure(prodTypeId: String) {
+        
         
     }
 }

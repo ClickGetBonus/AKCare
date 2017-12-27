@@ -1059,7 +1059,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 7 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 8 nibs.
   struct nib {
     /// Nib `H5ViewController`.
     static let h5ViewController = _R.nib._H5ViewController()
@@ -1069,6 +1069,8 @@ struct R: Rswift.Validatable {
     static let msgTypeCell = _R.nib._MsgTypeCell()
     /// Nib `ProBannerCell`.
     static let proBannerCell = _R.nib._ProBannerCell()
+    /// Nib `ProdCell`.
+    static let prodCell = _R.nib._ProdCell()
     /// Nib `ProdTypeCell`.
     static let prodTypeCell = _R.nib._ProdTypeCell()
     /// Nib `ProdTypeHeadCell`.
@@ -1094,6 +1096,11 @@ struct R: Rswift.Validatable {
     /// `UINib(name: "ProBannerCell", in: bundle)`
     static func proBannerCell(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.proBannerCell)
+    }
+    
+    /// `UINib(name: "ProdCell", in: bundle)`
+    static func prodCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.prodCell)
     }
     
     /// `UINib(name: "ProdTypeCell", in: bundle)`
@@ -1256,6 +1263,17 @@ struct _R: Rswift.Validatable {
       
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> ProBannerCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ProBannerCell
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct _ProdCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "ProdCell"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> ProdCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ProdCell
       }
       
       fileprivate init() {}

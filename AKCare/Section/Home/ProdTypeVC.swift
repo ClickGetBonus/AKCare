@@ -117,6 +117,7 @@ extension ProdTypeVC: UITableViewDelegate, UITableViewDataSource {
             self.selection = indexPath.section == selection ? nil : indexPath.section
         } else {
             
+            
         }
     }
 }
