@@ -10,15 +10,15 @@ import Foundation
 import Alamofire
 
 struct ProdListRequest: Request {
-    typealias Response = BaseResponse
     
-    let path = "getCcAct.do"
+    typealias Response = ProdListResponse
+    
+    let path = "listProd.do"
     let method: HTTPMethod = .post
     
     var sid: String
     var prodTypeId: String
     
     var parameters: [String: Any] { return ["sid" : sid, "prodTypeId" : prodTypeId] }
-    
     
 }

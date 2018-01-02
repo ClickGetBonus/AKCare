@@ -97,5 +97,17 @@ extension AKApi {
         }
     }
     
+    static func getProdInfo(prodId: String, _ complete: @escaping (ProdInfoRequest.Response?) -> Void) {
+        
+        guard let sid = self.verifyAuth() else {
+            complete(nil)
+            return
+        }
+        
+        self.send(request: ProdInfoRequest(sid: sid, prodId: prodId)) { (response) in
+            complete(response)
+        }
+    }
+    
     
 }

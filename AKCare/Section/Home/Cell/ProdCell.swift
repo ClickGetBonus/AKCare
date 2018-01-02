@@ -22,4 +22,12 @@ class ProdCell: UITableViewCell {
         
     }
     
+    func configure(by product: Product) {
+        
+        self.prodImgView.ak_setImage(urlString: product.pic)
+        self.prodNameLabel.text = product.name
+        self.prodSizeLabel.text = product.prodDims
+        self.prodLayerLabel.text = product.plasterLayer
+    }
+    
 }

@@ -1337,6 +1337,16 @@ struct _R: Rswift.Validatable {
       
       let bundle = R.hostingBundle
       let name = "Home"
+      let prodListVC = StoryboardViewControllerResource<ProdListVC>(identifier: "ProdListVC")
+      let prodTypeVC = StoryboardViewControllerResource<ProdTypeVC>(identifier: "ProdTypeVC")
+      
+      func prodListVC(_: Void = ()) -> ProdListVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: prodListVC)
+      }
+      
+      func prodTypeVC(_: Void = ()) -> ProdTypeVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: prodTypeVC)
+      }
       
       static func validate() throws {
         if UIKit.UIImage(named: "bg_180_135") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'bg_180_135' is used in storyboard 'Home', but couldn't be loaded.") }
@@ -1347,6 +1357,8 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "icon_study") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icon_study' is used in storyboard 'Home', but couldn't be loaded.") }
         if UIKit.UIImage(named: "hotInfo_right_bg") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'hotInfo_right_bg' is used in storyboard 'Home', but couldn't be loaded.") }
         if UIKit.UIImage(named: "hotInfo_left_bg") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'hotInfo_left_bg' is used in storyboard 'Home', but couldn't be loaded.") }
+        if _R.storyboard.home().prodListVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'prodListVC' could not be loaded from storyboard 'Home' as 'ProdListVC'.") }
+        if _R.storyboard.home().prodTypeVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'prodTypeVC' could not be loaded from storyboard 'Home' as 'ProdTypeVC'.") }
       }
       
       fileprivate init() {}
@@ -1410,15 +1422,21 @@ struct _R: Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "Promotion"
       let proInfoVC = StoryboardViewControllerResource<ProInfoVC>(identifier: "ProInfoVC")
+      let promotionVC = StoryboardViewControllerResource<PromotionVC>(identifier: "PromotionVC")
       
       func proInfoVC(_: Void = ()) -> ProInfoVC? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: proInfoVC)
+      }
+      
+      func promotionVC(_: Void = ()) -> PromotionVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: promotionVC)
       }
       
       static func validate() throws {
         if UIKit.UIImage(named: "NavIcon") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'NavIcon' is used in storyboard 'Promotion', but couldn't be loaded.") }
         if UIKit.UIImage(named: "bg_200") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'bg_200' is used in storyboard 'Promotion', but couldn't be loaded.") }
         if _R.storyboard.promotion().proInfoVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'proInfoVC' could not be loaded from storyboard 'Promotion' as 'ProInfoVC'.") }
+        if _R.storyboard.promotion().promotionVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'promotionVC' could not be loaded from storyboard 'Promotion' as 'PromotionVC'.") }
       }
       
       fileprivate init() {}

@@ -344,7 +344,7 @@
         <!--商品分类-->
         <scene sceneID="vfz-rB-bKU">
             <objects>
-                <viewController title="商品分类" hidesBottomBarWhenPushed="YES" id="L30-hR-bS1" customClass="ProdTypeVC" customModule="AKCare" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProdTypeVC" title="商品分类" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="L30-hR-bS1" customClass="ProdTypeVC" customModule="AKCare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Sbi-fu-iZa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -375,7 +375,7 @@
         <!--商品-->
         <scene sceneID="pW2-m0-5Um">
             <objects>
-                <viewController title="商品" id="Qdm-zk-LI2" customClass="ProdListVC" customModule="AKCare" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProdListVC" title="商品" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Qdm-zk-LI2" customClass="ProdListVC" customModule="AKCare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FZE-6s-3xL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

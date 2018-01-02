@@ -117,7 +117,9 @@ extension ProdTypeVC: UITableViewDelegate, UITableViewDataSource {
             self.selection = indexPath.section == selection ? nil : indexPath.section
         } else {
             
-            
+            let vc = R.storyboard.home.prodListVC()!
+            vc.prodTypeId = self.types[indexPath.section].children[indexPath.row].id
+            self.show(vc, sender: nil)
         }
     }
 }

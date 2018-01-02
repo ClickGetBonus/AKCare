@@ -34,7 +34,7 @@
         <!--PromotionVC-->
         <scene sceneID="wEx-Cz-ckf">
             <objects>
-                <viewController id="iT6-kv-Tjt" customClass="PromotionVC" customModule="AKCare" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PromotionVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iT6-kv-Tjt" customClass="PromotionVC" customModule="AKCare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="b8H-hC-g5q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

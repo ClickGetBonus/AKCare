@@ -51,6 +51,4 @@ struct URLSessionClient: Client {
         }
     }
     
-    
-    
 }
