@@ -9,6 +9,9 @@
 import Foundation
 import HandyJSON
 
+/*
+ 商品分类
+ */
 struct ProdType: HandyJSON {
     var children: [ProdType] = []
     var id: String = ""

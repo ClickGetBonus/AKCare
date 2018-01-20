@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F1F2F2D20133BAF0050F855 /* InfoTypeListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1F2F2C20133BAF0050F855 /* InfoTypeListRequest.swift */; };
+		3F1F2F2F20133D2C0050F855 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1F2F2E20133D2C0050F855 /* Info.swift */; };
+		3F1F2F3120133DB40050F855 /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1F2F3020133DB40050F855 /* Shop.swift */; };
+		3F1F2F3320133FE80050F855 /* HotInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1F2F3220133FE80050F855 /* HotInfo.swift */; };
+		3F1F2F35201341D70050F855 /* PromSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1F2F34201341D70050F855 /* PromSet.swift */; };
+		3F1F2F37201342AF0050F855 /* Prize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1F2F36201342AF0050F855 /* Prize.swift */; };
+		3F1F2F3B20134D2F0050F855 /* OtherPrize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1F2F3A20134D2F0050F855 /* OtherPrize.swift */; };
+		3F1F2F3F20134D8C0050F855 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1F2F3E20134D8C0050F855 /* Order.swift */; };
+		3F1F2F4120134EA40050F855 /* Notice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1F2F4020134EA40050F855 /* Notice.swift */; };
+		3F1F2F43201350AD0050F855 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1F2F42201350AD0050F855 /* Card.swift */; };
+		3F1F2F45201350F40050F855 /* CardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1F2F44201350F40050F855 /* CardInfo.swift */; };
+		3F6C42BB20135266009BA31E /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6C42BA20135266009BA31E /* UserInfo.swift */; };
 		610402701FAAF13C003A5F3B /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6104026F1FAAF13C003A5F3B /* Response.swift */; };
 		610DF3EC1FCD0A2E001609C1 /* AKHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610DF3EB1FCD0A2E001609C1 /* AKHelper.swift */; };
 		610DF3EE1FCD0ADF001609C1 /* InfoType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610DF3ED1FCD0ADF001609C1 /* InfoType.swift */; };
@@ -110,6 +122,18 @@
 
 /* Begin PBXFileReference section */
 		21BDF86069E1B29A9F2C571F /* Pods-AKCare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AKCare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AKCare/Pods-AKCare.debug.xcconfig"; sourceTree = "<group>"; };
+		3F1F2F2C20133BAF0050F855 /* InfoTypeListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTypeListRequest.swift; sourceTree = "<group>"; };
+		3F1F2F2E20133D2C0050F855 /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
+		3F1F2F3020133DB40050F855 /* Shop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
+		3F1F2F3220133FE80050F855 /* HotInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotInfo.swift; sourceTree = "<group>"; };
+		3F1F2F34201341D70050F855 /* PromSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromSet.swift; sourceTree = "<group>"; };
+		3F1F2F36201342AF0050F855 /* Prize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prize.swift; sourceTree = "<group>"; };
+		3F1F2F3A20134D2F0050F855 /* OtherPrize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherPrize.swift; sourceTree = "<group>"; };
+		3F1F2F3E20134D8C0050F855 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		3F1F2F4020134EA40050F855 /* Notice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notice.swift; sourceTree = "<group>"; };
+		3F1F2F42201350AD0050F855 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		3F1F2F44201350F40050F855 /* CardInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfo.swift; sourceTree = "<group>"; };
+		3F6C42BA20135266009BA31E /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		5289921369D6377B59EF6B4A /* Pods-AKCare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AKCare.release.xcconfig"; path = "Pods/Target Support Files/Pods-AKCare/Pods-AKCare.release.xcconfig"; sourceTree = "<group>"; };
 		6104026F1FAAF13C003A5F3B /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		610DF3EB1FCD0A2E001609C1 /* AKHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKHelper.swift; sourceTree = "<group>"; };
@@ -232,6 +256,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F1F2F2B20133B7F0050F855 /* Infomation */ = {
+			isa = PBXGroup;
+			children = (
+				3F1F2F2C20133BAF0050F855 /* InfoTypeListRequest.swift */,
+			);
+			path = Infomation;
+			sourceTree = "<group>";
+		};
 		52852B061F765C55A6FFB86E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -275,6 +307,7 @@
 		614432771FA8639C00C7A99A /* API */ = {
 			isa = PBXGroup;
 			children = (
+				3F1F2F2B20133B7F0050F855 /* Infomation */,
 				61B703C91FBD9EF8001E76E2 /* HomePageRequest.swift */,
 				614F61601FC3C8E9002390D4 /* InfoTypeRequest.swift */,
 				618F78EE1FD15C3A0034B7EA /* PromInfoRequest.swift */,
@@ -290,11 +323,22 @@
 			children = (
 				61C1FF631FC271B1008AF778 /* PromBanner.swift */,
 				610DF3ED1FCD0ADF001609C1 /* InfoType.swift */,
+				3F1F2F2E20133D2C0050F855 /* Info.swift */,
 				613C75FB1FEBC15100D16075 /* Prom.swift */,
 				613C75FD1FEBC1B700D16075 /* PromElement.swift */,
+				3F1F2F34201341D70050F855 /* PromSet.swift */,
 				618E199C1FECE6FF00821538 /* HotBanner.swift */,
 				61A8CE391FF207C000662DA7 /* ProdType.swift */,
 				614C37071FF377B30027817E /* Product.swift */,
+				3F1F2F3020133DB40050F855 /* Shop.swift */,
+				3F1F2F3220133FE80050F855 /* HotInfo.swift */,
+				3F1F2F36201342AF0050F855 /* Prize.swift */,
+				3F1F2F3A20134D2F0050F855 /* OtherPrize.swift */,
+				3F1F2F3E20134D8C0050F855 /* Order.swift */,
+				3F1F2F4020134EA40050F855 /* Notice.swift */,
+				3F1F2F42201350AD0050F855 /* Card.swift */,
+				3F1F2F44201350F40050F855 /* CardInfo.swift */,
+				3F6C42BA20135266009BA31E /* UserInfo.swift */,
 			);
 			path = ApiModel;
 			sourceTree = "<group>";
@@ -836,8 +880,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F1F2F37201342AF0050F855 /* Prize.swift in Sources */,
 				610DF3F01FCD11F3001609C1 /* InfoTypeResponse.swift in Sources */,
+				3F1F2F2D20133BAF0050F855 /* InfoTypeListRequest.swift in Sources */,
 				611CC4901FF333DB00D4C5BA /* ProdListRequest.swift in Sources */,
+				3F1F2F3120133DB40050F855 /* Shop.swift in Sources */,
+				3F1F2F3B20134D2F0050F855 /* OtherPrize.swift in Sources */,
+				3F1F2F2F20133D2C0050F855 /* Info.swift in Sources */,
 				618E199D1FECE6FF00821538 /* HotBanner.swift in Sources */,
 				614C370C1FF37BAE0027817E /* ProdInfoVC.swift in Sources */,
 				6139F11F1FBC1EE800C3FB4F /* ETNavBarTransparent.swift in Sources */,
@@ -848,8 +897,10 @@
 				61A8CE3C1FF207FD00662DA7 /* ProdTypeResponse.swift in Sources */,
 				614432721FA8627B00C7A99A /* PromotionVC.swift in Sources */,
 				617B992D1FB03DFE00EC3395 /* ViewControllerUtil.swift in Sources */,
+				3F1F2F3320133FE80050F855 /* HotInfo.swift in Sources */,
 				614432791FA863B100C7A99A /* Request.swift in Sources */,
 				6150A2981FBBED0B0073013E /* DispatchTimeExt.swift in Sources */,
+				3F1F2F35201341D70050F855 /* PromSet.swift in Sources */,
 				610DF3EC1FCD0A2E001609C1 /* AKHelper.swift in Sources */,
 				614C370A1FF378080027817E /* ProdListResponse.swift in Sources */,
 				61A8CE3E1FF25ACE00662DA7 /* ProdListVC.swift in Sources */,
@@ -857,6 +908,7 @@
 				61DEE02C1FECECD800E03CD8 /* BaseXibView.swift in Sources */,
 				614C37081FF377B30027817E /* Product.swift in Sources */,
 				61B88F291FBE832D009AB8D8 /* ViewUtil.swift in Sources */,
+				3F6C42BB20135266009BA31E /* UserInfo.swift in Sources */,
 				617B99331FB043FA00EC3395 /* Auth.swift in Sources */,
 				61E008781FAAFB9B0039364A /* Decodable.swift in Sources */,
 				61A8CE351FF1FE6200662DA7 /* ProdTypeHeadCell.swift in Sources */,
@@ -867,6 +919,7 @@
 				61C1FF641FC271B1008AF778 /* PromBanner.swift in Sources */,
 				610402701FAAF13C003A5F3B /* Response.swift in Sources */,
 				61DEE0281FECEA4C00E03CD8 /* SignView.swift in Sources */,
+				3F1F2F43201350AD0050F855 /* Card.swift in Sources */,
 				610DF3EE1FCD0ADF001609C1 /* InfoType.swift in Sources */,
 				6140A8BE1FF0FF09001197FB /* ProdTypeCell.swift in Sources */,
 				61B88F261FBE8290009AB8D8 /* H5ViewController.swift in Sources */,
@@ -880,11 +933,14 @@
 				6139F12B1FBC426B00C3FB4F /* ImageCollectionViewCell.swift in Sources */,
 				614C37061FF371BB0027817E /* R.generated.swift in Sources */,
 				618F78EF1FD15C3A0034B7EA /* PromInfoRequest.swift in Sources */,
+				3F1F2F3F20134D8C0050F855 /* Order.swift in Sources */,
 				6144326F1FA8621F00C7A99A /* InfomationVC.swift in Sources */,
 				618FD2601FBED584004C2B96 /* ProBannerCell.swift in Sources */,
+				3F1F2F45201350F40050F855 /* CardInfo.swift in Sources */,
 				617B99301FB0435F00EC3395 /* AKUserManager.swift in Sources */,
 				610DF3F21FCD15D0001609C1 /* AKApi.swift in Sources */,
 				61A8CE3A1FF207C000662DA7 /* ProdType.swift in Sources */,
+				3F1F2F4120134EA40050F855 /* Notice.swift in Sources */,
 				6139F11D1FBC1CCF00C3FB4F /* ColorExt.swift in Sources */,
 				614432741FA8628E00C7A99A /* MeVC.swift in Sources */,
 				613C75FE1FEBC1B700D16075 /* PromElement.swift in Sources */,
