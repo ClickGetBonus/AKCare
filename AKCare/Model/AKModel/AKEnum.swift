@@ -13,3 +13,13 @@ enum HotClickType: Int {
     case product = 1
     case infomation = 2
 }
+
+enum UserType {
+    case store
+    case construct
+}
+
+enum RegType: String {
+    case store = "md"
+    case construct = "sg"
+}

@@ -10,6 +10,9 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
+/*
+ 登录
+ */
 struct LoginRequest: Request {
     
     typealias Response = LoginResponse

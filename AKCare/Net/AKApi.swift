@@ -49,14 +49,14 @@ extension AKApi {
         }
     }
     
-    static func getMsgType(_ complete: @escaping (InfoTypeRequest.Response?) -> Void) {
+    static func getMsgType(parentId: String, _ complete: @escaping (InfoTypeRequest.Response?) -> Void) {
         
         guard let sid = self.verifyAuth() else {
             complete(nil)
             return
         }
         
-        self.send(request: InfoTypeRequest(sid: sid)) { (response) in
+        self.send(request: InfoTypeRequest(sid: sid, parentId: parentId)) { (response) in
             complete(response)
         }
     }

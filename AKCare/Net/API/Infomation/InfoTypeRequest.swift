@@ -1,17 +1,17 @@
 //
-//  InfoTypeListRequest.swift
+//  InfoTypeRequest.swift
 //  AKCare
 //
-//  Created by Lan on 2018/1/20.
-//  Copyright © 2018年 Ian. All rights reserved.
+//  Created by Aki on 2017/11/21.
+//  Copyright © 2017年 Ian. All rights reserved.
 //
 
 import Foundation
 import Alamofire
 
-struct InfoTypeListRequest: Request {
+struct InfoTypeRequest: Request {
     
-    typealias Response = BaseResponse
+    typealias Response = InfoTypeResponse
     
     let path = "listContentType.do"
     let method: HTTPMethod = .post
@@ -25,3 +25,5 @@ struct InfoTypeListRequest: Request {
     
     var parameters: [String: Any] { return ["sid" : sid, "parentId" : parentId] }
 }
+
+

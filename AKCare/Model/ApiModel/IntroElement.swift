@@ -1,5 +1,5 @@
 //
-//  PromElement.swift
+//  IntroElement.swift
 //  AKCare
 //
 //  Created by Aki on 2017/12/21.
@@ -10,12 +10,11 @@ import Foundation
 import HandyJSON
 
 /*
- 活动图文介绍
- 
+ 图文介绍
  content 内容。为文字或图片地址
  imgType 是否图片类型
  */
-struct PromElement: HandyJSON {
+struct IntroElement: HandyJSON {
     var content: String = ""
     var imgType: Bool = false
 }

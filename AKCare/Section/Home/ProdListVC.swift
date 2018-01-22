@@ -27,6 +27,7 @@ class ProdListVC: UIViewController {
         self.setupBackItem()
         SwiftLoader.show(animated: true)
         
+        
         AKApi.getProdList(prodTypeId: prodTypeId) { (response) in
             
             if let p = response?.prods {

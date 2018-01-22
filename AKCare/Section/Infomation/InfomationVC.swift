@@ -58,7 +58,7 @@ class InfomationVC: UIViewController {
     
     func updateTypes(_ complete: @escaping () -> Void) {
         
-        AKApi.getMsgType { (response) in
+        AKApi.getMsgType(parentId: "") { (response) in
             
             if let types = response?.types {
                 self.types = types
