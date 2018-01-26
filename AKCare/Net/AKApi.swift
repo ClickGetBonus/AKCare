@@ -11,18 +11,16 @@ import UIKit
 
 class AKApi {
     
-    
-    
     static func send<T: Request>(request: T, _ complete: @escaping (T.Response?) -> Void) {
         
         URLSessionClient.share.send(request, handler: complete)
     }
     
     
+    
     private static func verifyAuth() -> String? {
         
-        
-        if let sid = AKUserManager.userAuth?.sid {
+        if let sid = AKUserManager.getSid() {
             return sid
         } else {
             UIApplication.shared.keyWindow?.rootViewController!.showInfo("登录已过期, 请重新登录")
@@ -30,8 +28,6 @@ class AKApi {
             return nil
         }
     }
-    
-    
 }
 
 
@@ -40,7 +36,6 @@ extension AKApi {
     
     static func getHomePage(_ complete: @escaping (HomePageRequest.Response?) -> Void) {
         guard let sid = self.verifyAuth() else {
-            complete(nil)
             return
         }
         
@@ -52,7 +47,6 @@ extension AKApi {
     static func getMsgType(parentId: String, _ complete: @escaping (InfoTypeRequest.Response?) -> Void) {
         
         guard let sid = self.verifyAuth() else {
-            complete(nil)
             return
         }
         
@@ -64,7 +58,6 @@ extension AKApi {
     static func getPromInfo(actId: String, _ complete: @escaping (PromInfoRequest.Response?) -> Void) {
         
         guard let sid = self.verifyAuth() else {
-            complete(nil)
             return
         }
         
@@ -76,7 +69,6 @@ extension AKApi {
     static func getProdType(_ complete: @escaping (ProdTypeRequest.Response?) -> Void) {
         
         guard let sid = self.verifyAuth() else {
-            complete(nil)
             return
         }
         
@@ -88,7 +80,6 @@ extension AKApi {
     static func getProdList(prodTypeId: String, _ complete: @escaping (ProdListRequest.Response?) -> Void) {
         
         guard let sid = self.verifyAuth() else {
-            complete(nil)
             return
         }
         
@@ -100,7 +91,6 @@ extension AKApi {
     static func getProdInfo(prodId: String, _ complete: @escaping (ProdInfoRequest.Response?) -> Void) {
         
         guard let sid = self.verifyAuth() else {
-            complete(nil)
             return
         }
         

@@ -9,6 +9,9 @@
 import Foundation
 import Alamofire
 
+/*
+ 1.7.2 查询商品列表
+ */
 struct ProdListRequest: Request {
     
     typealias Response = ProdListResponse

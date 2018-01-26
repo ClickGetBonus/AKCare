@@ -8,10 +8,9 @@
 
 import Foundation
 import Alamofire
-import SwiftyJSON
 
 /*
- 重置用户密码
+ 1.1.9    重置用户密码
  */
 struct ResetPasswdRequest: Request {
     

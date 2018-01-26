@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 /*
- 进行一次老虎机游戏
+ 1.5.2    进行一次老虎机游戏
  */
 struct PlayTigerRequest: Request {
     

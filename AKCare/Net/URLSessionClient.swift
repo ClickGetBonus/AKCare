@@ -23,8 +23,11 @@ struct URLSessionClient: Client {
         request.httpMethod = r.method.rawValue
         
         var parameters = r.parameters
-        parameters["osn"] = "ndr"
-        parameters["vid"] = 30100
+        
+        var vid: Int = 30100 //当前app的版本标识
+        var osn: String = "ios" //手机平台标识。ios为苹果，ndr为安卓
+        parameters["osn"] = osn
+        parameters["vid"] = vid
         
         SwiftLoader.show(animated: true)
         

@@ -11,7 +11,7 @@ import Alamofire
 import SwiftyJSON
 
 /*
- 发送用户重置密码的手机验证码
+ 1.1.8    发送用户重置密码的手机验证码
  */
 struct SendResetSmsRequest: Request {
     

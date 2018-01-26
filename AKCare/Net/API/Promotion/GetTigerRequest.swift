@@ -9,9 +9,12 @@
 import Foundation
 import Alamofire
 
+/*
+ 1.5.1    查询活动老虎机配置
+ */
 struct GetTigerRequest: Request {
     
-    typealias Response = BaseResponse
+    typealias Response = GetTigerResponse
     
     let path = "showTgGame.do"
     let method: HTTPMethod = .get

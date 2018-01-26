@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 /*
- 获取首页信息
+ 1.4.1    获取首页活动与资讯的信息
  */
 struct HomePageRequest: Request {
     

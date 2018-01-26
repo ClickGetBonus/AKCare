@@ -1,5 +1,5 @@
 //
-//  CardInfo.swift
+//  TicketInfo.swift
 //  AKCare
 //
 //  Created by Lan on 2018/1/20.
@@ -12,7 +12,7 @@ import HandyJSON
 /*
  卡券详情
  */
-struct CardInfo: HandyJSON {
+struct TicketInfo: HandyJSON {
     var wsUserGiftTickId: String = "" //卡券id
     var wsActId: String = "" //活动id
     var wsCardId: String = "" //后台配置卡券id

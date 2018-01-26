@@ -11,7 +11,7 @@ import Alamofire
 import SwiftyJSON
 
 /*
- 登录
+ 1.1.1    登录
  */
 struct LoginRequest: Request {
     

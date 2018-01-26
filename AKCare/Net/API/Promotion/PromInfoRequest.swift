@@ -9,6 +9,9 @@
 import Foundation
 import Alamofire
 
+/*
+ 1.4.2    查询活动
+ */
 struct PromInfoRequest: Request {
     
     typealias Response = GetPromResponse

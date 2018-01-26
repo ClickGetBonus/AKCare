@@ -11,7 +11,7 @@ import Alamofire
 import SwiftyJSON
 
 /*
- 验证注册码和用户名
+ 1.1.2    验证注册码和用户名
  */
 struct VerifyRegRequest: Request {
     

@@ -9,6 +9,9 @@
 import Foundation
 import Alamofire
 
+/*
+ 1.2.1    签到
+ */
 struct SignInRequest: Request {
     
     typealias Response = BaseResponse

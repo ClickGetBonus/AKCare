@@ -11,7 +11,7 @@ import Alamofire
 import SwiftyJSON
 
 /*
- 用户注册
+ 1.1.7    用户注册
  */
 struct RegistRequest: Request {
     

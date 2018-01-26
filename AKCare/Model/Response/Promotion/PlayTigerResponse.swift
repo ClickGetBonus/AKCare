@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 class PlayTigerResponse: BaseResponse {
     
     var win: Bool = false //是否中奖

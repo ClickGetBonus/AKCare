@@ -1,8 +1,8 @@
 //
-//  InfoUnreadRequest.swift
+//  GetUserInfoRequest.swift
 //  AKCare
 //
-//  Created by Aki on 2018/1/22.
+//  Created by Aki on 2018/1/24.
 //  Copyright © 2018年 Ian. All rights reserved.
 //
 
@@ -10,17 +10,18 @@ import Foundation
 import Alamofire
 
 /*
- 1.4.7    获取个人未读资讯个数
+ 1.10.1    查看个人资料
  */
-struct InfoUnreadRequest: Request {
+struct GetUserInfoRequest: Request {
     
-    typealias Response = InfoUnreadResponse
+    typealias Response = BaseResponse
     
-    let path = "fetchUnReadInfo.do"
+    let path = "fetchUserInfo.do"
     let method: HTTPMethod = .post
     
     var sid: String
     
     var parameters: [String: Any] { return ["sid" : sid] }
 }
+
 

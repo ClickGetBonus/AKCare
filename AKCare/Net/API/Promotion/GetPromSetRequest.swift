@@ -9,6 +9,9 @@
 import Foundation
 import Alamofire
 
+/*
+ 1.4.3    查询活动套餐
+ */
 struct GetPromSetRequest: Request {
     
     typealias Response = GetPromSetResponse

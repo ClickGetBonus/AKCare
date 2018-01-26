@@ -9,6 +9,9 @@
 import Foundation
 import Alamofire
 
+/*
+ 1.4.6    获取资讯详情
+ */
 struct InfoContentRequest: Request {
     
     typealias Response = InfoContentResponse

@@ -1,8 +1,8 @@
 //
-//  Card.swift
+//  Ticket.swift
 //  AKCare
 //
-//  Created by Lan on 2018/1/20.
+//  Created by Aki on 2018/1/24.
 //  Copyright © 2018年 Ian. All rights reserved.
 //
 
@@ -12,7 +12,7 @@ import HandyJSON
 /*
  卡券
  */
-struct Card: HandyJSON {
+struct Ticket: HandyJSON {
     var ticketId: String = "" //券id
     var ticketCode: String = "" //卡券号
     var expiredDate: String = "" //失效日期

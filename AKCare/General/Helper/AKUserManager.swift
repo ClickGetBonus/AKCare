@@ -12,6 +12,10 @@ import SwiftyJSON
 
 class AKUserManager {
     
+    static func getSid() -> String? {
+        return self.userAuth?.sid
+    }
+    
     static var userAuth: Auth? {
         get {
             let json = UserDefaults.standard.string(forKey: "userAuth")

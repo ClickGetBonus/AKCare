@@ -23,3 +23,8 @@ enum RegType: String {
     case store = "md"
     case construct = "sg"
 }
+
+enum ProdFavState: Int {
+    case none = 0
+    case have = 1
+}

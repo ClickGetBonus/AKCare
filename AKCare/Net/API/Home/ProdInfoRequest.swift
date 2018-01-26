@@ -9,9 +9,12 @@
 import Foundation
 import Alamofire
 
+/*
+ 1.7.3    查询商品详情
+ */
 struct ProdInfoRequest: Request {
     
-    typealias Response = BaseResponse
+    typealias Response = ProdInfoResponse
     
     let path = "showProd.do"
     let method: HTTPMethod = .post

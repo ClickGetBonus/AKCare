@@ -9,6 +9,9 @@
 import Foundation
 import Alamofire
 
+/*
+ 1.4.4    查询资讯分类
+ */
 struct InfoTypeRequest: Request {
     
     typealias Response = InfoTypeResponse

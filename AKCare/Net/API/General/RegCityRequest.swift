@@ -11,7 +11,7 @@ import Alamofire
 import SwiftyJSON
 
 /*
- 列表可进行注册的省份
+ 1.1.4    可进行注册的城市列表
  */
 struct RegCityRequest: Request {
     

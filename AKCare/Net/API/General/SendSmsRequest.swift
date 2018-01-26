@@ -11,7 +11,7 @@ import Alamofire
 import SwiftyJSON
 
 /*
- 发送用户注册的手机验证码
+ 1.1.6    发送用户注册的手机验证码
  */
 struct SendSmsRequest: Request {
     

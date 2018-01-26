@@ -9,11 +9,14 @@
 import Foundation
 import Alamofire
 
+/*
+ 1.4.4    查询资讯
+ */
 struct GetInfoRequest: Request {
     
     typealias Response = GetInfoResponse
     
-    let path = "listContentType.do"
+    let path = "listContent.do"
     let method: HTTPMethod = .post
     
     var sid: String

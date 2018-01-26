@@ -9,6 +9,9 @@
 import Foundation
 import Alamofire
 
+/*
+ 1.3.1    查询可显示弹窗
+ */
 struct GetPopupRequest: Request {
     
     typealias Response = GetPopupResponse

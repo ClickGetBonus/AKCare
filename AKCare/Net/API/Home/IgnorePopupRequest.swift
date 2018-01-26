@@ -9,6 +9,9 @@
 import Foundation
 import Alamofire
 
+/*
+ 1.3.2    不再显示弹窗
+ */
 struct IgnorePopupRequest: Request {
     
     typealias Response = BaseResponse

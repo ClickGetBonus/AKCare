@@ -1,8 +1,8 @@
 //
-//  InfoUnreadRequest.swift
+//  NoticeUnreadRequest.swift
 //  AKCare
 //
-//  Created by Aki on 2018/1/22.
+//  Created by Aki on 2018/1/24.
 //  Copyright © 2018年 Ian. All rights reserved.
 //
 
@@ -10,17 +10,20 @@ import Foundation
 import Alamofire
 
 /*
- 1.4.7    获取个人未读资讯个数
+ 1.8.3    查询未读消息数
  */
-struct InfoUnreadRequest: Request {
+struct NoticeUnreadRequest: Request {
     
-    typealias Response = InfoUnreadResponse
+    typealias Response = NoticeUnreadResponse
     
-    let path = "fetchUnReadInfo.do"
+    let path = "listUnRead.do"
     let method: HTTPMethod = .post
     
     var sid: String
     
     var parameters: [String: Any] { return ["sid" : sid] }
+    
 }
+
+
 
