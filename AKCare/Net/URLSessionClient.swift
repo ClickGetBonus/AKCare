@@ -24,8 +24,8 @@ struct URLSessionClient: Client {
         
         var parameters = r.parameters
         
-        var vid: Int = 30100 //当前app的版本标识
-        var osn: String = "ios" //手机平台标识。ios为苹果，ndr为安卓
+        let vid: Int = 30100 //当前app的版本标识
+        let osn: String = "ios" //手机平台标识。ios为苹果，ndr为安卓
         parameters["osn"] = osn
         parameters["vid"] = vid
         

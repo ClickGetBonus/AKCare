@@ -19,5 +19,6 @@ struct SubmitFeedbackRequest: Request {
     let path = "saveFeedback.do"
     let method: HTTPMethod = .post
     
-    var parameters: [String: Any] { return [:] }
+    var sid: String
+    var parameters: [String: Any] { return [ "sid" : sid] }
 }

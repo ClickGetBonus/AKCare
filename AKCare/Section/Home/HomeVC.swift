@@ -45,7 +45,8 @@ class HomeVC: UITableViewController {
         navigationController?.navigationBar.shadowImage = UIImage()
         
         SwiftLoader.show(animated: true)
-        AKApi.getHomePage { (response) in
+        AKApi.send(request: HomePageRequest()) { (response) in
+            
             if let prom = response?.proms {
                 self.promLabelMax.text = "\(prom.count)"
             }
