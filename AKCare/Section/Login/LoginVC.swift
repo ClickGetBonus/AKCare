@@ -22,14 +22,13 @@ class LoginVC: UIViewController {
     
     @IBAction func onLogin(_ sender: Any) {
         
-        URLSessionClient.share.send(LoginRequest(userName: "门店文", passwd: "202cb962ac59075b964b07152d234b70")) { (response) in
+        URLSessionClient.share.send(LoginRequest(userName: "lzmd", passwd: "0cc175b9c0f1b6a831c399e269772661")) { (response) in
             
             if let response = response {
                 
-                AKUserManager.userAuth = Auth(sid: response.sid, userName: response.userName, userType: response.userType)
-                UIApplication.shared.keyWindow?.rootViewController = R.storyboard.main.instantiateInitialViewController()
+                let auth = Auth(sid: response.sid, userName: response.userName, userType: response.userType)
+                LogInOut.login(auth: auth)
             }
-            
         }
         
     }

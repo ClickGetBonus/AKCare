@@ -26,8 +26,7 @@ class ProInfoVC: UIViewController {
         self.title = "活动详情"
         
         SwiftLoader.show(animated: true)
-        
-        AKApi.getPromInfo(actId: banner.id) { (response) in
+        AKApi.send(request: PromInfoRequest(sid: AKUserManager.getSid(), actId: banner.id)) { (response) in
             
             if let prom = response {
                 

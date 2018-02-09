@@ -28,7 +28,7 @@ class ProdListVC: UIViewController {
         SwiftLoader.show(animated: true)
         
         
-        AKApi.getProdList(prodTypeId: prodTypeId) { (response) in
+        AKApi.send(request: ProdListRequest(sid: AKUserManager.getSid(), prodTypeId: prodTypeId)) { (response) in
             
             if let p = response?.prods {
                 self.products = p

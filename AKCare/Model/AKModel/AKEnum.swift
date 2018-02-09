@@ -28,3 +28,22 @@ enum ProdFavState: Int {
     case none = 0
     case have = 1
 }
+
+//卡券使用场景。0为线上活动，1为线下门店活动，2为线下商品卡券
+enum TicketUseScene: Int {
+    case online = 0
+    case offlineStore = 1
+    case offlineProd = 2
+    
+    func name() -> String {
+        switch self {
+        case .online:
+            return "线上活动"
+        case .offlineStore:
+            return "线下门店活动"
+        case .offlineProd:
+            return "线下商品卡券"
+        }
+    }
+}
+

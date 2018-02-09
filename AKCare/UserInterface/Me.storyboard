@@ -91,6 +91,9 @@
                                                     <constraint firstAttribute="width" constant="40" id="Svj-Wc-ge5"/>
                                                 </constraints>
                                                 <state key="normal" image="icon_sign"/>
+                                                <connections>
+                                                    <action selector="onSign:" destination="eTp-i3-yeg" eventType="touchUpInside" id="3Yl-ac-UAH"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="距离" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tpf-mJ-30Q">
                                                 <rect key="frame" x="24" y="214.5" width="20.5" height="12"/>
@@ -139,18 +142,34 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fqO-V8-V9J" userLabel="MeOptionView">
-                                        <rect key="frame" x="0.0" y="235" width="375" height="300"/>
+                                        <rect key="frame" x="0.0" y="235" width="375" height="360"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="300" id="kZH-Ik-sgG"/>
+                                            <constraint firstAttribute="height" constant="360" id="kZH-Ik-sgG"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UXm-AL-EOV">
+                                        <rect key="frame" x="107" y="620" width="160" height="32"/>
+                                        <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="160" id="M4L-Mr-4pf"/>
+                                            <constraint firstAttribute="height" constant="32" id="bht-FJ-8cU"/>
+                                        </constraints>
+                                        <state key="normal" title="退出登录">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onLogout:" destination="eTp-i3-yeg" eventType="touchUpInside" id="FKm-eo-VZp"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="dpv-LD-kQd" firstAttribute="top" secondItem="3h3-OF-2P4" secondAttribute="top" id="D0O-fz-vbi"/>
-                                    <constraint firstAttribute="bottom" secondItem="fqO-V8-V9J" secondAttribute="bottom" constant="30" id="DSS-q5-f7u"/>
                                     <constraint firstAttribute="trailing" secondItem="fqO-V8-V9J" secondAttribute="trailing" id="GAg-4E-JA0"/>
+                                    <constraint firstItem="UXm-AL-EOV" firstAttribute="top" secondItem="fqO-V8-V9J" secondAttribute="bottom" constant="25" id="It1-89-Gul"/>
                                     <constraint firstItem="fqO-V8-V9J" firstAttribute="leading" secondItem="3h3-OF-2P4" secondAttribute="leading" id="Ms5-H4-bhy"/>
+                                    <constraint firstItem="UXm-AL-EOV" firstAttribute="centerX" secondItem="fqO-V8-V9J" secondAttribute="centerX" id="TWK-1X-jQ1"/>
+                                    <constraint firstAttribute="bottom" secondItem="UXm-AL-EOV" secondAttribute="bottom" constant="25" id="j7p-sJ-39o"/>
                                     <constraint firstItem="dpv-LD-kQd" firstAttribute="leading" secondItem="3h3-OF-2P4" secondAttribute="leading" id="rfc-gm-nqP"/>
                                     <constraint firstAttribute="trailing" secondItem="dpv-LD-kQd" secondAttribute="trailing" id="yKp-DG-rfi"/>
                                     <constraint firstItem="fqO-V8-V9J" firstAttribute="top" secondItem="dpv-LD-kQd" secondAttribute="bottom" id="yay-zU-B0T"/>
@@ -168,15 +187,168 @@
                         <viewLayoutGuide key="safeArea" id="q1s-3i-Gva"/>
                     </view>
                     <navigationItem key="navigationItem" id="oJh-0F-1vl"/>
-                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="logoutButton" destination="UXm-AL-EOV" id="O1D-mW-yeM"/>
                         <outlet property="meOptionView" destination="fqO-V8-V9J" id="7me-bR-rgA"/>
                         <outlet property="scrollView" destination="3h3-OF-2P4" id="FdX-im-Meb"/>
+                        <segue destination="jzP-iL-DjF" kind="show" identifier="goMsgCenter" id="Ppg-hP-oYY"/>
+                        <segue destination="G2K-k6-R4g" kind="show" identifier="goMyOrder" id="cFB-qM-cfC"/>
+                        <segue destination="mMC-6X-hQC" kind="show" identifier="goMyFav" id="z0t-PL-cNd"/>
+                        <segue destination="wcc-rf-IVw" kind="show" identifier="goUserInfo" id="BfZ-6Y-8dG"/>
+                        <segue destination="1uj-pt-fd7" kind="show" identifier="goResetPassword" id="vfj-s8-Sfb"/>
+                        <segue destination="7So-zZ-htK" kind="show" identifier="goFeedback" id="m4j-3I-5UK"/>
+                        <segue destination="x2J-N6-geR" kind="show" identifier="goAboutUs" id="vN9-gw-Emy"/>
+                        <segue destination="CaO-Oc-ebl" kind="show" identifier="goMyTicket" id="t7T-qN-Tdw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zaB-sQ-4Un" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1599.2" y="8.1280788177339911"/>
+        </scene>
+        <!--消息中心-->
+        <scene sceneID="DzH-SL-IZj">
+            <objects>
+                <viewController storyboardIdentifier="MsgCenterVC" title="消息中心" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jzP-iL-DjF" customClass="MsgCenterVC" customModule="AKCare" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="swc-9B-0Uo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="8sU-UB-sTx"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p3r-Sc-iq0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-719" y="-715"/>
+        </scene>
+        <!--我的卡券-->
+        <scene sceneID="X80-pj-3IP">
+            <objects>
+                <tableViewController title="我的卡券" id="CaO-Oc-ebl" customClass="MyTicketVC" customModule="AKCare" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="kcc-C7-JeN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="vxI-RV-9Nq">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vxI-RV-9Nq" id="bXx-yB-0wv">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="CaO-Oc-ebl" id="VIZ-Ty-Ybs"/>
+                            <outlet property="delegate" destination="CaO-Oc-ebl" id="glq-Aw-eEx"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GWE-Nw-fBi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="135" y="-716"/>
+        </scene>
+        <!--我的收藏-->
+        <scene sceneID="LQ1-rZ-Cv6">
+            <objects>
+                <viewController storyboardIdentifier="MyFavVC" title="我的收藏" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mMC-6X-hQC" customClass="MyFavVC" customModule="AKCare" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="L7Z-zx-P32">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="SMD-IK-IwK"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gdJ-ip-iQR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-719" y="8"/>
+        </scene>
+        <!--意见反馈-->
+        <scene sceneID="OlB-em-gHX">
+            <objects>
+                <viewController storyboardIdentifier="FeedbackVC" title="意见反馈" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7So-zZ-htK" customClass="FeedbackVC" customModule="AKCare" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oLG-Lv-DAk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="kPU-aw-W3a"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lPv-fF-FaZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-719" y="707"/>
+        </scene>
+        <!--个人资料-->
+        <scene sceneID="r0s-lS-gMi">
+            <objects>
+                <viewController storyboardIdentifier="UserInfoVC" title="个人资料" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wcc-rf-IVw" customClass="UserInfoVC" customModule="AKCare" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kGH-iD-wNG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="fm6-9C-vdN"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W7R-GY-fwj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="190" y="9"/>
+        </scene>
+        <!--关于我们-->
+        <scene sceneID="erc-rj-FM8">
+            <objects>
+                <viewController storyboardIdentifier="AboutUsVC" title="关于我们" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="x2J-N6-geR" customClass="AboutUsVC" customModule="AKCare" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gaW-Ew-oAs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="8yl-DH-nEl"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fO0-vm-kNF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1030" y="707"/>
+        </scene>
+        <!--重设密码-->
+        <scene sceneID="Au6-wa-2fP">
+            <objects>
+                <viewController storyboardIdentifier="ResetPasswordVC" title="重设密码" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1uj-pt-fd7" customClass="ResetPasswordVC" customModule="AKCare" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="X9S-gf-its">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="psT-JH-bxl"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e0a-nK-lgc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1030" y="8"/>
+        </scene>
+        <!--我的订单-->
+        <scene sceneID="jUa-l8-BrI">
+            <objects>
+                <viewController storyboardIdentifier="MyOrderVC" title="我的订单" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="G2K-k6-R4g" customClass="MyOrderVC" customModule="AKCare" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FKH-FB-Nd8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="03a-ri-BKY">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="v60-Lx-5YQ" firstAttribute="trailing" secondItem="03a-ri-BKY" secondAttribute="trailing" id="6hP-SB-i6p"/>
+                            <constraint firstItem="03a-ri-BKY" firstAttribute="leading" secondItem="v60-Lx-5YQ" secondAttribute="leading" id="JCq-rQ-Has"/>
+                            <constraint firstItem="03a-ri-BKY" firstAttribute="top" secondItem="v60-Lx-5YQ" secondAttribute="top" id="cWa-Vc-21F"/>
+                            <constraint firstItem="v60-Lx-5YQ" firstAttribute="bottom" secondItem="03a-ri-BKY" secondAttribute="bottom" id="e5x-Jb-zSl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="v60-Lx-5YQ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PBg-D3-Oyj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1068" y="-715"/>
         </scene>
     </scenes>
     <resources>

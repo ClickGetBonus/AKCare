@@ -15,7 +15,7 @@ let HUDPresentTimeInterval: Double = 1.25
 extension UIViewController {
     
     func showInfo(_ text: String) {
-        HUD.flash(.label("text"), delay: HUDPresentTimeInterval)
+        HUD.flash(.label(text), delay: HUDPresentTimeInterval)
     }
     
     func showError() {

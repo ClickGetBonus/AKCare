@@ -45,7 +45,7 @@ class HomeVC: UITableViewController {
         navigationController?.navigationBar.shadowImage = UIImage()
         
         SwiftLoader.show(animated: true)
-        AKApi.send(request: HomePageRequest()) { (response) in
+        AKApi.send(request: HomePageRequest(sid: AKUserManager.getSid())) { (response) in
             
             if let prom = response?.proms {
                 self.promLabelMax.text = "\(prom.count)"
@@ -76,8 +76,7 @@ class HomeVC: UITableViewController {
         
         self.tableView.backgroundColor = UIColor.white
         self.tableView.setupRefreshable(color: NavBGTranslucentColor) { [weak self] () -> Void in
-            
-            AKApi.getHomePage({ (response) in
+            AKApi.send(request: HomePageRequest(sid: AKUserManager.getSid())) { (response) in
                 if let response = response {
                     self?.promLabelMax.text = "\(response.proms.count)"
                     self?.promLabelCurrent.text = "1"
@@ -86,7 +85,7 @@ class HomeVC: UITableViewController {
                 }
                 self?.updateViews()
                 self?.tableView.finishRefresh()
-            })
+            }
             
         }
     }

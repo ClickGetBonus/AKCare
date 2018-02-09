@@ -30,7 +30,7 @@ class PromotionVC: UIViewController {
         
         
         SwiftLoader.show(animated: true)
-        AKApi.getHomePage { (response) in
+        AKApi.send(request: HomePageRequest(sid: AKUserManager.getSid())) { (response) in
             
             if let proms = response?.proms {
                 self.proms = proms

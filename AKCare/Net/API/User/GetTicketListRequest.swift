@@ -14,7 +14,7 @@ import Alamofire
  */
 struct GetTicketListRequest: Request {
     
-    typealias Response = NoticeUnreadResponse
+    typealias Response = GetTicketListResponse
     
     let path = "fetchMyTicket.do"
     let method: HTTPMethod = .post

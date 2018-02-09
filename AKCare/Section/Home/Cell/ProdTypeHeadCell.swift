@@ -15,11 +15,11 @@ class ProdTypeHeadCell: UITableViewCell {
     @IBOutlet weak var arrow: UIImageView!
     @IBOutlet weak var typeLabel: UILabel!
     
-    func select() {
-        self.arrow.rotation(by: Double.pi)
+    func select(animated: Bool) {
+        self.arrow.rotation(to: Double.pi, animated: animated)
     }
     
-    func deselect() {
-        self.arrow.rotation(by: Double.pi)
+    func deselect(animated: Bool) {
+        self.arrow.rotation(to: 0, animated: animated)
     }
 }

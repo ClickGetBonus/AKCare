@@ -17,14 +17,14 @@ class ProdTypeVC: UIViewController {
             var deleteIndexs: [IndexPath] = []
             if let sel = _selection {
                 if let beforeCell = tableView.cellForRow(at: IndexPath(row: 0, section: sel)) as? ProdTypeHeadCell {
-                    beforeCell.deselect()
+                    beforeCell.deselect(animated: false)
                 }
                 deleteIndexs = (0 ..< types[sel].children.count).map { i in return IndexPath(row: i+1, section: sel) }
             }
             var insertIndexs: [IndexPath] = []
             if let sel = newValue {
                 if let currentCell = tableView.cellForRow(at: IndexPath(row: 0, section: sel)) as? ProdTypeHeadCell {
-                    currentCell.select()
+                    currentCell.select(animated: false)
                 }
                 insertIndexs = (0 ..< types[sel].children.count).map { i in return IndexPath(row: i+1, section: sel) }
             }
@@ -58,8 +58,7 @@ class ProdTypeVC: UIViewController {
         self.setupBackItem()
         
         SwiftLoader.show(animated: true)
-        
-        AKApi.getProdType({ (response) in
+        AKApi.send(request: ProdTypeRequest(sid: AKUserManager.getSid())) { (response) in
             
             if let types = response?.firstLev {
                 self.types = types
@@ -71,10 +70,7 @@ class ProdTypeVC: UIViewController {
                 }
             }
             SwiftLoader.hide()
-            
-        })
-        
-        
+        }
     }
 }
 
@@ -96,6 +92,7 @@ extension ProdTypeVC: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: ProdTypeHeadCell.className) as! ProdTypeHeadCell
             cell.typeLabel.text = types[indexPath.section].name
+            indexPath.section == selection ? cell.select(animated: false) : cell.deselect(animated: false)
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: ProdTypeCell.className) as! ProdTypeCell

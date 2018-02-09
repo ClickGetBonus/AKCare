@@ -148,16 +148,32 @@ extension UIView {
         }
     }
     
-    func rotation(by value: Double) {
+    func rotation(to value: Double, animated: Bool) {
         
-        let anim = CABasicAnimation(keyPath: "transform.rotation")
-        anim.toValue = value
-        anim.duration = 0.2
-        anim.isRemovedOnCompletion = true
-        self.layer.add(anim, forKey: nil)
-        self.layer.removeAllAnimations()
-        UIView.animate(withDuration: 0.2) {
-            self.transform = self.transform.rotated(by: CGFloat(value))
+        let key = "transform.rotation"
+        let from = (self.layer.animation(forKey: key) as? CABasicAnimation)?.toValue as? Double ?? 0.0
+        guard from != value else {
+            return
         }
+        
+        let anim = CABasicAnimation(keyPath: key)
+        anim.fromValue = from
+        anim.toValue = value
+        anim.duration = animated ? 0.2 : 0.0
+        // 保持运动后的状态
+        anim.isRemovedOnCompletion = false
+        anim.fillMode = kCAFillModeForwards
+        self.layer.add(anim, forKey: key)
     }
 }
+
+
+
+
+
+
+
+
+
+
+

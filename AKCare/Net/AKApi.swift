@@ -13,13 +13,12 @@ class AKApi {
     
     static func send<T: Request>(request: T, _ complete: @escaping (T.Response?) -> Void) {
         
-        guard (!request.parameters.keys.contains("sid") || AKUserManager.getSid() != nil) else {
+        guard (!request.parameters.keys.contains("sid") || !AKUserManager.getSid().isEmpty) else {
             
-            UIApplication.shared.keyWindow?.rootViewController!.showInfo("登录已过期, 请重新登录")
             UIApplication.shared.keyWindow?.rootViewController = R.storyboard.login().instantiateInitialViewController()!
+            UIApplication.shared.keyWindow?.rootViewController!.showInfo("登录已过期, 请重新登录")
             return
         }
-        
         
         URLSessionClient.share.send(request, handler: complete)
     }

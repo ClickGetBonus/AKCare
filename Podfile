@@ -13,5 +13,7 @@ target 'AKCare' do
   pod 'PKHUD', '~> 5.0.0'
   pod 'DGElasticPullToRefresh', '~> 1.1'
   pod 'Gemini'
+  pod 'ElongationPreview'
+  pod 'JDAnimationKit'
 
 end

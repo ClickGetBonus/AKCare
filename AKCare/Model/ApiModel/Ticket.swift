@@ -21,5 +21,5 @@ struct Ticket: HandyJSON {
     var name: String = "" //卡券名称
     var describe: String = "" //券描述
     var usedTime: String = "" //使用时间
-    var eftDays: Int = 0 //剩余多少天后过期
+    var leftDays: Int = 0 //剩余多少天后过期
 }
