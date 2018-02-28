@@ -55,6 +55,14 @@ class HomeVC: UITableViewController {
             self.updateViews()
             SwiftLoader.hide()
         }
+        
+        if #available(iOS 11.0, *) {
+            self.navigationController?.navigationBar.prefersLargeTitles = true
+            self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+            self.navigationItem.largeTitleDisplayMode = .never
+        } else {
+            
+        }
     }
     
     func initSubviews() {

@@ -380,38 +380,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="ToS-If-JJw">
-                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="56" id="534-xk-1v4"/>
-                                </constraints>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="P3w-6o-b2E">
-                                <rect key="frame" x="0.0" y="120" width="375" height="547"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="U3J-yL-PNz" firstAttribute="trailing" secondItem="P3w-6o-b2E" secondAttribute="trailing" id="JAi-Ze-hDU"/>
-                            <constraint firstItem="ToS-If-JJw" firstAttribute="top" secondItem="U3J-yL-PNz" secondAttribute="top" id="TnG-Fb-2EZ"/>
-                            <constraint firstItem="ToS-If-JJw" firstAttribute="trailing" secondItem="U3J-yL-PNz" secondAttribute="trailing" id="hUb-2R-9ca"/>
+                            <constraint firstItem="P3w-6o-b2E" firstAttribute="top" secondItem="U3J-yL-PNz" secondAttribute="top" id="T4E-rO-xpt"/>
                             <constraint firstItem="P3w-6o-b2E" firstAttribute="leading" secondItem="U3J-yL-PNz" secondAttribute="leading" id="iht-Kt-edk"/>
-                            <constraint firstItem="ToS-If-JJw" firstAttribute="leading" secondItem="U3J-yL-PNz" secondAttribute="leading" id="jc0-t7-qag"/>
                             <constraint firstItem="U3J-yL-PNz" firstAttribute="bottom" secondItem="P3w-6o-b2E" secondAttribute="bottom" id="mtd-cm-7wh"/>
-                            <constraint firstItem="P3w-6o-b2E" firstAttribute="top" secondItem="ToS-If-JJw" secondAttribute="bottom" id="rJW-mb-fAZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="U3J-yL-PNz"/>
                     </view>
                     <connections>
-                        <outlet property="searchBar" destination="ToS-If-JJw" id="VY3-V5-Xxa"/>
                         <outlet property="tableView" destination="P3w-6o-b2E" id="XUf-ud-ly2"/>
+                        <segue destination="sdr-vH-W1O" kind="show" identifier="goProdInfo" id="S13-3X-RCu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="awv-WY-CgI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1423" y="218"/>
+        </scene>
+        <!--商品详情-->
+        <scene sceneID="Oje-ea-xkk">
+            <objects>
+                <viewController storyboardIdentifier="ProdInfoVC" title="商品详情" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sdr-vH-W1O" customClass="ProdInfoVC" customModule="AKCare" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a7y-RW-WMo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="zjM-y4-kDY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CwP-Yj-xul" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2174" y="218"/>
         </scene>
     </scenes>
     <resources>

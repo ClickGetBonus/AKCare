@@ -198,7 +198,7 @@
                         <segue destination="1uj-pt-fd7" kind="show" identifier="goResetPassword" id="vfj-s8-Sfb"/>
                         <segue destination="7So-zZ-htK" kind="show" identifier="goFeedback" id="m4j-3I-5UK"/>
                         <segue destination="x2J-N6-geR" kind="show" identifier="goAboutUs" id="vN9-gw-Emy"/>
-                        <segue destination="CaO-Oc-ebl" kind="show" identifier="goMyTicket" id="t7T-qN-Tdw"/>
+                        <segue destination="Yh9-Gj-c2H" kind="show" identifier="goMyTicket" id="etE-LK-QZN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zaB-sQ-4Un" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -221,32 +221,38 @@
             <point key="canvasLocation" x="-719" y="-715"/>
         </scene>
         <!--我的卡券-->
-        <scene sceneID="X80-pj-3IP">
+        <scene sceneID="ev9-Ua-Sbz">
             <objects>
-                <tableViewController title="我的卡券" id="CaO-Oc-ebl" customClass="MyTicketVC" customModule="AKCare" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="kcc-C7-JeN">
+                <viewController title="我的卡券" hidesBottomBarWhenPushed="YES" id="Yh9-Gj-c2H" customClass="MyTicketVC" customModule="AKCare" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kpe-mM-pvM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="vxI-RV-9Nq">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vxI-RV-9Nq" id="bXx-yB-0wv">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="CaO-Oc-ebl" id="VIZ-Ty-Ybs"/>
-                            <outlet property="delegate" destination="CaO-Oc-ebl" id="glq-Aw-eEx"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GWE-Nw-fBi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="mTF-bA-DdI">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="separatorColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mTF-bA-DdI" firstAttribute="leading" secondItem="erP-Eb-GJr" secondAttribute="leading" id="1TM-oh-jCa"/>
+                            <constraint firstItem="erP-Eb-GJr" firstAttribute="trailing" secondItem="mTF-bA-DdI" secondAttribute="trailing" id="629-ht-gOv"/>
+                            <constraint firstItem="erP-Eb-GJr" firstAttribute="bottom" secondItem="mTF-bA-DdI" secondAttribute="bottom" id="NWo-Oy-xS0"/>
+                            <constraint firstItem="mTF-bA-DdI" firstAttribute="top" secondItem="erP-Eb-GJr" secondAttribute="top" id="O6d-vM-Tfi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="erP-Eb-GJr"/>
+                    </view>
+                    <metadata>
+                        <string key="libraryAssetSourceID">Xcode.InterfaceBuilderKit.CocoaTouchIntegration.ObjectLibraryAssetProvider:IBUIViewController</string>
+                    </metadata>
+                    <connections>
+                        <outlet property="tableView" destination="mTF-bA-DdI" id="zDB-O0-eXm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2wN-f2-E53" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="135" y="-716"/>
+            <point key="canvasLocation" x="190" y="-716"/>
         </scene>
         <!--我的收藏-->
         <scene sceneID="LQ1-rZ-Cv6">

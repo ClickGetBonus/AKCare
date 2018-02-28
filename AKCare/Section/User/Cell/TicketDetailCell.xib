@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="160" id="KGk-i7-Jjw" customClass="TicketDetailCell" customModule="AKCare" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="439" height="160"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="439" height="159.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xwF-jU-TvU" userLabel="BottomView">
+                        <rect key="frame" x="16" y="0.0" width="407" height="151.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="礼品价格: 100元" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PcI-xG-WAS">
+                                <rect key="frame" x="22" y="18" width="103" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="卡券描述: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vWI-lP-nrX">
+                                <rect key="frame" x="22" y="43" width="65" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="740" text="这市领导看附件是来得及开发了快速的减肥了会计师代理费会计师德里克废旧塑料开房记录速度快解放" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4q-gY-PrT">
+                                <rect key="frame" x="92" y="43" width="300" height="50.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vWI-lP-nrX" firstAttribute="leading" secondItem="PcI-xG-WAS" secondAttribute="leading" id="4Kj-4t-M5h"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="b4q-gY-PrT" secondAttribute="trailing" constant="8" id="D31-iZ-XQS"/>
+                            <constraint firstItem="b4q-gY-PrT" firstAttribute="leading" secondItem="vWI-lP-nrX" secondAttribute="trailing" constant="5" id="J0e-Wp-Dqz"/>
+                            <constraint firstItem="vWI-lP-nrX" firstAttribute="top" secondItem="PcI-xG-WAS" secondAttribute="bottom" constant="8" id="akb-CE-zWf"/>
+                            <constraint firstItem="b4q-gY-PrT" firstAttribute="top" secondItem="vWI-lP-nrX" secondAttribute="top" id="coP-Q0-xoJ"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="b4q-gY-PrT" secondAttribute="bottom" constant="8" id="rCl-17-Taj"/>
+                            <constraint firstItem="PcI-xG-WAS" firstAttribute="top" secondItem="xwF-jU-TvU" secondAttribute="top" constant="18" id="yDj-IR-lrL"/>
+                            <constraint firstItem="PcI-xG-WAS" firstAttribute="leading" secondItem="xwF-jU-TvU" secondAttribute="leading" constant="22" id="yYK-bH-OsC"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="xwF-jU-TvU" secondAttribute="bottom" constant="8" id="WGw-jq-Gak"/>
+                    <constraint firstItem="xwF-jU-TvU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="j4P-AG-RR7"/>
+                    <constraint firstAttribute="trailing" secondItem="xwF-jU-TvU" secondAttribute="trailing" constant="16" id="kyn-b1-xc3"/>
+                    <constraint firstItem="xwF-jU-TvU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="xyn-GN-xT1"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="bottomView" destination="xwF-jU-TvU" id="f3k-FY-Xkp"/>
+                <outlet property="ticketDescriptionLabel" destination="b4q-gY-PrT" id="6VP-X6-QJX"/>
+                <outlet property="ticketPriceLabel" destination="PcI-xG-WAS" id="MeR-c1-t0h"/>
+            </connections>
+            <point key="canvasLocation" x="167.5" y="112"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -15,7 +15,6 @@ class ProdCell: UITableViewCell {
     @IBOutlet weak var prodSizeLabel: UILabel!
     @IBOutlet weak var prodLayerLabel: UILabel!
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         

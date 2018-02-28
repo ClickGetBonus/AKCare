@@ -17,6 +17,8 @@
 		3F1F2F4120134EA40050F855 /* Notice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1F2F4020134EA40050F855 /* Notice.swift */; };
 		3F1F2F45201350F40050F855 /* TicketInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1F2F44201350F40050F855 /* TicketInfo.swift */; };
 		3F6C42BB20135266009BA31E /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6C42BA20135266009BA31E /* UserInfo.swift */; };
+		3FB103EE202EDEDE00497799 /* TicketDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB103EC202EDEDE00497799 /* TicketDetailCell.swift */; };
+		3FB103EF202EDEDE00497799 /* TicketDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FB103ED202EDEDE00497799 /* TicketDetailCell.xib */; };
 		610402701FAAF13C003A5F3B /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6104026F1FAAF13C003A5F3B /* Response.swift */; };
 		610DF3EC1FCD0A2E001609C1 /* AKHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610DF3EB1FCD0A2E001609C1 /* AKHelper.swift */; };
 		610DF3EE1FCD0ADF001609C1 /* InfoType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610DF3ED1FCD0ADF001609C1 /* InfoType.swift */; };
@@ -204,6 +206,8 @@
 		3F1F2F4020134EA40050F855 /* Notice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notice.swift; sourceTree = "<group>"; };
 		3F1F2F44201350F40050F855 /* TicketInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketInfo.swift; sourceTree = "<group>"; };
 		3F6C42BA20135266009BA31E /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		3FB103EC202EDEDE00497799 /* TicketDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketDetailCell.swift; sourceTree = "<group>"; };
+		3FB103ED202EDEDE00497799 /* TicketDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TicketDetailCell.xib; sourceTree = "<group>"; };
 		5289921369D6377B59EF6B4A /* Pods-AKCare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AKCare.release.xcconfig"; path = "Pods/Target Support Files/Pods-AKCare/Pods-AKCare.release.xcconfig"; sourceTree = "<group>"; };
 		6104026F1FAAF13C003A5F3B /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		610DF3EB1FCD0A2E001609C1 /* AKHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKHelper.swift; sourceTree = "<group>"; };
@@ -427,6 +431,8 @@
 			children = (
 				610E574C202C310400B8DA42 /* MyTicketCell.swift */,
 				610E574D202C310400B8DA42 /* MyTicketCell.xib */,
+				3FB103EC202EDEDE00497799 /* TicketDetailCell.swift */,
+				3FB103ED202EDEDE00497799 /* TicketDetailCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1055,6 +1061,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FB103EF202EDEDE00497799 /* TicketDetailCell.xib in Resources */,
 				6139F1181FBC141100C3FB4F /* Home.storyboard in Resources */,
 				61F426731FA1B87600D3BBB6 /* Promotion.storyboard in Resources */,
 				61A8CE361FF1FE6200662DA7 /* ProdTypeHeadCell.xib in Resources */,
@@ -1146,6 +1153,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-AKCare/Pods-AKCare-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/CYLTableViewPlaceHolder/CYLTableViewPlaceHolder.framework",
 				"${BUILT_PRODUCTS_DIR}/DGElasticPullToRefresh/DGElasticPullToRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/ElongationPreview/ElongationPreview.framework",
 				"${BUILT_PRODUCTS_DIR}/Gemini/Gemini.framework",
@@ -1160,6 +1168,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CYLTableViewPlaceHolder.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DGElasticPullToRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ElongationPreview.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Gemini.framework",
@@ -1283,6 +1292,7 @@
 				6154DFC820183637007467CA /* GetPopupListRequest.swift in Sources */,
 				6139F12B1FBC426B00C3FB4F /* ImageCollectionViewCell.swift in Sources */,
 				614C37061FF371BB0027817E /* R.generated.swift in Sources */,
+				3FB103EE202EDEDE00497799 /* TicketDetailCell.swift in Sources */,
 				618F78EF1FD15C3A0034B7EA /* PromInfoRequest.swift in Sources */,
 				3F1F2F3F20134D8C0050F855 /* Order.swift in Sources */,
 				6144326F1FA8621F00C7A99A /* InfomationVC.swift in Sources */,

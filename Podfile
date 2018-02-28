@@ -15,5 +15,7 @@ target 'AKCare' do
   pod 'Gemini'
   pod 'ElongationPreview'
   pod 'JDAnimationKit'
+  pod 'CYLTableViewPlaceHolder'
+  
 
 end

@@ -23,6 +23,15 @@ extension UIView {
         self.layer.masksToBounds = true
     }
     
+    //部分圆角
+    func corner(byRoundingCorners corners: UIRectCorner, radii: CGFloat) {
+        let maskPath = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radii, height: radii))
+        let maskLayer = CAShapeLayer()
+        maskLayer.frame = self.bounds
+        maskLayer.path = maskPath.cgPath
+        self.layer.mask = maskLayer
+    }
+    
     var xibName: String {
         let clzzName = NSStringFromClass(self.classForCoder)
         let nameArray = clzzName.components(separatedBy: ".")

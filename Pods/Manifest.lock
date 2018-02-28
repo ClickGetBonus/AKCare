@@ -1,12 +1,13 @@
 PODS:
   - Alamofire (4.6.0)
+  - CYLTableViewPlaceHolder (1.0.8)
   - DGElasticPullToRefresh (1.1)
   - ElongationPreview (1.1.0)
   - Gemini (1.2.0)
   - HandyJSON (4.0.0-beta.1)
   - JDAnimationKit (1.1):
     - pop (~> 1.0)
-  - Kingfisher (4.5.0)
+  - Kingfisher (4.6.1)
   - PKHUD (5.0.0)
   - pop (1.0.10)
   - R.swift (4.0.0):
@@ -16,6 +17,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
+  - CYLTableViewPlaceHolder
   - DGElasticPullToRefresh (~> 1.1)
   - ElongationPreview
   - Gemini
@@ -28,18 +30,19 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  CYLTableViewPlaceHolder: 44075c119aab78bbc514c75d771d6565e19938e8
   DGElasticPullToRefresh: 28f11a6026302a90f8ffebbc6e24748e584dddd3
   ElongationPreview: 1ed2dc13ce9e119d9265f54e1e37417aa826c5c1
   Gemini: acff98012273066f1b83c887731260abfaf18ec5
   HandyJSON: 428bb18e2c34c2a77361accebf90cf64e4f74118
   JDAnimationKit: 2b72de95282fdc8b5f1a240a311531bdfeee9199
-  Kingfisher: 26ae0473102b77b575da51960c932431e3745407
+  Kingfisher: 1f9157d9c02b380cbd0b7cc890161195164eb634
   PKHUD: 3c001512c6e002091184197a8de7a20420786e3b
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
   R.swift: d6a5ec2f55a8441dc0ed9f1f8b37d7d11ae85c66
   R.swift.Library: c3af34921024333546e23b70e70d0b4e0cffca75
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 4247ed228fb3360df1c604bbcfcc893263f1b43a
+PODFILE CHECKSUM: facca96a3040db14b79b0f3c56163ccce33321f0
 
-COCOAPODS: 1.4.0.rc.1
+COCOAPODS: 1.4.0.beta.1

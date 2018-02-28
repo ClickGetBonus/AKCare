@@ -7,13 +7,17 @@
 //
 
 import UIKit
-import ElongationPreview
 
-class MyTicketVC: ElongationViewController {
+class MyTicketVC: UIViewController {
     
+    @IBOutlet weak var tableView: UITableView!
     let cellIdentifier = "MyTicketCell"
+    let detailCellIdentifier = "TicketDetailCell"
     var tickets: [Ticket] = []
     var oldTickets: [Ticket] = []
+    var ticketInfo: TicketInfo?
+    
+    var selection: IndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +28,9 @@ class MyTicketVC: ElongationViewController {
     }
     
     func setupViews() {
+        
         self.tableView.register(MyTicketCell.nib, forCellReuseIdentifier: cellIdentifier)
+        self.tableView.register(TicketDetailCell.nib, forCellReuseIdentifier: detailCellIdentifier)
         self.tableView.backgroundColor = UIColor.groupTableViewBackground
         self.tableView.setupRefreshable(color: NavBGTranslucentColor) { [weak self] () -> Void in
             
@@ -36,8 +42,10 @@ class MyTicketVC: ElongationViewController {
         
         SwiftLoader.show(animated: true)
         self.requestTickets {
-            self.tableView.reloadData()
             SwiftLoader.hide()
+            self.tableView.delegate = self
+            self.tableView.dataSource = self
+            self.tableView.reloadData()
         }
     }
     
@@ -55,13 +63,58 @@ class MyTicketVC: ElongationViewController {
         } else {
             return nil
         }
-        
     }
+    
+    
+    func selectCell(by indexPath: IndexPath) {
+        
+        guard let ticket = self.getTicket(by: indexPath) else {
+            self.showInfo("卡券不存在")
+            return
+        }
+        
+        guard indexPath != self.selection else {
+            return
+        }
+        
+        SwiftLoader.show(animated: true)
+        AKApi.send(request: TicketInfoRequest(sid: AKUserManager.getSid(), ticketId: ticket.ticketId)) { (response) in
+            
+            if let info = response?.detail {
+                
+                self.ticketInfo = info
+                SwiftLoader.hide()
+                
+                self.tableView.beginUpdates()
+                if let selection = self.selection {
+                    self.tableView.deleteRows(at: [IndexPath(row: selection.row+1,
+                                                             section: selection.section)],
+                                              with: .top)
+                    self.selection = nil
+                }
+                self.tableView.insertRows(at: [IndexPath(row: indexPath.row+1, section: indexPath.section)], with: .top)
+                self.selection = indexPath
+                self.tableView.endUpdates()
+            }
+        }
+    }
+    
+    func deselectCell(by indexPath: IndexPath) {
+        
+        
+        self.ticketInfo = nil
+        self.selection = nil
+        self.tableView.beginUpdates()
+        self.tableView.deleteRows(at: [IndexPath(row: indexPath.row+1, section: indexPath.section)],
+                                  with: .top)
+        self.tableView.endUpdates()
+    }
+    
 }
 
 
 // MARK - Network
-extension MyTicketVC {
+extension MyTicketVC: UITableViewDelegate, UITableViewDataSource {
     
     func requestTickets(complete: @escaping () -> Void) {
         
@@ -75,21 +128,29 @@ extension MyTicketVC {
             complete()
         }
     }
+    
+    func requestTicketInfo(ticketId: String, complete: @escaping (TicketInfo?) -> Void) {
+        
+        AKApi.send(request: TicketInfoRequest(sid: AKUserManager.getSid(), ticketId: ticketId)) { (response) in
+            
+            complete(response?.detail)
+        }
+    }
 }
 
 
 // MARK - UITableView Delegate & DataSource
 extension MyTicketVC {
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return oldTickets.count > 0 ? 2 : 1
     }
     
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return section == 1 ? 30 : 0.01
     }
     
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 1 {
             let view = UIView(frame: CGRect(x: 0, y: 0, width: ScreenWidth, height: 30))
             view.backgroundColor = UIColor.groupTableViewBackground
@@ -106,19 +167,76 @@ extension MyTicketVC {
         return nil
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return MyTicketCell.cellHeight
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == 0 ? tickets.count : oldTickets.count
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! MyTicketCell
-        if let ticket = self.getTicket(by: indexPath) {
-            cell.configure(ticket: ticket)
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        guard let selection = self.selection else {
+            return MyTicketCell.cellHeight
         }
-        return cell
+        return indexPath == IndexPath(row: selection.row+1, section: selection.section) ? TicketDetailCell.cellHeight : MyTicketCell.cellHeight
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        let count = section == 0 ? tickets.count : oldTickets.count
+        return section == selection?.section ? count+1 : count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if selection != nil &&
+            indexPath == IndexPath(row: selection!.row+1, section: selection!.section) {
+            
+            guard let ticketInfo = self.ticketInfo else {
+                self.showInfo("查看卡券详情失败")
+                return UITableViewCell()
+            }
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: detailCellIdentifier) as! TicketDetailCell
+            cell.configure(ticket: ticketInfo)
+            return cell
+        } else {
+            
+            
+            var indexPath = indexPath
+            if selection != nil && indexPath.row > selection!.row+1 {
+                indexPath = IndexPath(row: indexPath.row-1, section: indexPath.section)
+            }
+            
+            guard let ticket = self.getTicket(by: indexPath) else {
+                self.showInfo("卡券不存在")
+                return UITableViewCell()
+            }
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! MyTicketCell
+            cell.configure(ticket: ticket)
+            return cell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if selection == indexPath || selection == indexPath.rowPlus() {
+            self.deselectCell(by: indexPath)
+        } else {
+            self.selectCell(by: indexPath)
+        }
+    }
+}
+
+extension IndexPath {
+    func rowPlus() -> IndexPath  {
+        return IndexPath(row: self.row+1, section: self.section)
+    }
+    
+    func rowPlus(_ a: Int) -> IndexPath  {
+        return IndexPath(row: self.row+a, section: self.section)
+    }
+    
+    func sectionPlus() -> IndexPath  {
+        return IndexPath(row: self.row+1, section: self.section)
+    }
+    
+    func sectionPlus(_ a: Int) -> IndexPath  {
+        return IndexPath(row: self.row+a, section: self.section)
     }
 }

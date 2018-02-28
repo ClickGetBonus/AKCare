@@ -9,7 +9,7 @@
 import UIKit
 import ElongationPreview
 
-class MyTicketCell: ElongationCell {
+class MyTicketCell: UITableViewCell {
     
     static let cellHeight: CGFloat = CGFloat(180/400*ScreenWidth)
 
@@ -42,8 +42,6 @@ class MyTicketCell: ElongationCell {
             self.ticketExpiryDateLabel.textColor = UIColor.lightGray
             self.ticketUseDateLabel.isHidden = false
         }
-        
-        
         
     }
 }

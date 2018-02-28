@@ -1059,7 +1059,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 9 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 10 nibs.
   struct nib {
     /// Nib `H5ViewController`.
     static let h5ViewController = _R.nib._H5ViewController()
@@ -1079,6 +1079,8 @@ struct R: Rswift.Validatable {
     static let prodTypeHeadCell = _R.nib._ProdTypeHeadCell()
     /// Nib `SignView`.
     static let signView = _R.nib._SignView()
+    /// Nib `TicketDetailCell`.
+    static let ticketDetailCell = _R.nib._TicketDetailCell()
     
     /// `UINib(name: "H5ViewController", in: bundle)`
     static func h5ViewController(_: Void = ()) -> UIKit.UINib {
@@ -1125,6 +1127,11 @@ struct R: Rswift.Validatable {
       return UIKit.UINib(resource: R.nib.signView)
     }
     
+    /// `UINib(name: "TicketDetailCell", in: bundle)`
+    static func ticketDetailCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.ticketDetailCell)
+    }
+    
     fileprivate init() {}
   }
   
@@ -1133,7 +1140,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.segue` struct is generated, and contains static references to 2 view controllers.
+  /// This `R.segue` struct is generated, and contains static references to 3 view controllers.
   struct segue {
     /// This struct is generated for `HomeVC`, and contains static references to 1 segues.
     struct homeVC {
@@ -1223,6 +1230,21 @@ struct R: Rswift.Validatable {
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
       static func goUserInfo(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MeVC, UserInfoVC>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.meVC.goUserInfo, segue: segue)
+      }
+      
+      fileprivate init() {}
+    }
+    
+    /// This struct is generated for `ProdListVC`, and contains static references to 1 segues.
+    struct prodListVC {
+      /// Segue identifier `goProdInfo`.
+      static let goProdInfo: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, ProdListVC, ProdInfoVC> = Rswift.StoryboardSegueIdentifier(identifier: "goProdInfo")
+      
+      /// Optionally returns a typed version of segue `goProdInfo`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func goProdInfo(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, ProdListVC, ProdInfoVC>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.prodListVC.goProdInfo, segue: segue)
       }
       
       fileprivate init() {}
@@ -1421,6 +1443,17 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
+    struct _TicketDetailCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "TicketDetailCell"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> TicketDetailCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TicketDetailCell
+      }
+      
+      fileprivate init() {}
+    }
+    
     fileprivate init() {}
   }
   
@@ -1438,8 +1471,13 @@ struct _R: Rswift.Validatable {
       
       let bundle = R.hostingBundle
       let name = "Home"
+      let prodInfoVC = StoryboardViewControllerResource<ProdInfoVC>(identifier: "ProdInfoVC")
       let prodListVC = StoryboardViewControllerResource<ProdListVC>(identifier: "ProdListVC")
       let prodTypeVC = StoryboardViewControllerResource<ProdTypeVC>(identifier: "ProdTypeVC")
+      
+      func prodInfoVC(_: Void = ()) -> ProdInfoVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: prodInfoVC)
+      }
       
       func prodListVC(_: Void = ()) -> ProdListVC? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: prodListVC)
@@ -1458,6 +1496,7 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "icon_study") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icon_study' is used in storyboard 'Home', but couldn't be loaded.") }
         if UIKit.UIImage(named: "hotInfo_right_bg") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'hotInfo_right_bg' is used in storyboard 'Home', but couldn't be loaded.") }
         if UIKit.UIImage(named: "hotInfo_left_bg") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'hotInfo_left_bg' is used in storyboard 'Home', but couldn't be loaded.") }
+        if _R.storyboard.home().prodInfoVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'prodInfoVC' could not be loaded from storyboard 'Home' as 'ProdInfoVC'.") }
         if _R.storyboard.home().prodListVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'prodListVC' could not be loaded from storyboard 'Home' as 'ProdListVC'.") }
         if _R.storyboard.home().prodTypeVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'prodTypeVC' could not be loaded from storyboard 'Home' as 'ProdTypeVC'.") }
       }

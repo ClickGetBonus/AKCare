@@ -57,6 +57,10 @@ class ProdTypeVC: UIViewController {
         
         self.setupBackItem()
         
+        
+        if #available(iOS 11.0, *) {
+            self.navigationItem.largeTitleDisplayMode = .always
+        }
         SwiftLoader.show(animated: true)
         AKApi.send(request: ProdTypeRequest(sid: AKUserManager.getSid())) { (response) in
             
@@ -115,7 +119,7 @@ extension ProdTypeVC: UITableViewDelegate, UITableViewDataSource {
         } else {
             
             let vc = R.storyboard.home.prodListVC()!
-            vc.prodTypeId = self.types[indexPath.section].children[indexPath.row].id
+            vc.prodType = self.types[indexPath.section].children[indexPath.row]
             self.show(vc, sender: nil)
         }
     }
