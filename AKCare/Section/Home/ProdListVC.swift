@@ -85,14 +85,7 @@ extension ProdListVC: UITableViewDelegate, UITableViewDataSource {
 
 extension ProdListVC: UISearchBarDelegate, UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        <#code#>
+        
     }
-    
-    func updateSearchResults(for searchController: UISearchController) {
-        <#code#>
-    }
-    
-    
-    
     
 }

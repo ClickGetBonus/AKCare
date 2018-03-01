@@ -18,13 +18,13 @@ class MyTicketVC: UIViewController {
     var ticketInfo: TicketInfo?
     
     var selection: IndexPath?
+    var detailCellIndexPath: IndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.setupBackItem()
         self.setupViews()
-        
     }
     
     func setupViews() {
@@ -67,7 +67,7 @@ class MyTicketVC: UIViewController {
     
     
     func selectCell(by indexPath: IndexPath) {
-        
+        var indexPath = indexPath
         guard let ticket = self.getTicket(by: indexPath) else {
             self.showInfo("卡券不存在")
             return
@@ -91,10 +91,19 @@ class MyTicketVC: UIViewController {
                                                              section: selection.section)],
                                               with: .top)
                     self.selection = nil
+                } else {
+                    indexPath = indexPath.rowPlus()
                 }
-                self.tableView.insertRows(at: [IndexPath(row: indexPath.row+1, section: indexPath.section)], with: .top)
+                self.tableView.insertRows(at: [indexPath], with: .top)
                 self.selection = indexPath
                 self.tableView.endUpdates()
+//                self.selection = indexPath
+                
+//                UIView.transition(with: self.tableView, duration: 0.35, options: .transitionFlipFromBottom, animations: {
+//                    self.tableView.reloadData()
+//                }, completion: nil)
+                
+//                self.tableView.reloadSections(IndexSet(integer: indexPath.section), with: .automatic)
             }
         }
     }
@@ -108,6 +117,12 @@ class MyTicketVC: UIViewController {
         self.tableView.deleteRows(at: [IndexPath(row: indexPath.row+1, section: indexPath.section)],
                                   with: .top)
         self.tableView.endUpdates()
+        
+//        UIView.transition(with: self.tableView, duration: 0.35, options: .transitionFlipFr, animations: {
+//            self.tableView.reloadData()
+//        }, completion: nil)
+        
+//        self.tableView.reloadSections(IndexSet(integer: indexPath.section), with: .automatic)
     }
     
 }
@@ -215,11 +230,24 @@ extension MyTicketVC {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if selection == indexPath || selection == indexPath.rowPlus() {
+        guard selection?.rowPlus() != indexPath else {
+            return
+        }
+        
+        if selection == indexPath {
             self.deselectCell(by: indexPath)
         } else {
             self.selectCell(by: indexPath)
         }
+    }
+    
+    func ignoreSelectionIndex(_ index: Int) -> Int {
+        
+        guard let selection = selection else {
+            return index
+        }
+        
+        return index > selection.row ? index-1 : index
     }
 }
 
@@ -233,10 +261,10 @@ extension IndexPath {
     }
     
     func sectionPlus() -> IndexPath  {
-        return IndexPath(row: self.row+1, section: self.section)
+        return IndexPath(row: self.row, section: self.section+1)
     }
     
     func sectionPlus(_ a: Int) -> IndexPath  {
-        return IndexPath(row: self.row+a, section: self.section)
+        return IndexPath(row: self.row, section: self.section+a)
     }
 }

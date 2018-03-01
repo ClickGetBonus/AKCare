@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ElongationPreview
 
 class MyTicketCell: UITableViewCell {
     
