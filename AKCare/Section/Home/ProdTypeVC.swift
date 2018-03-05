@@ -119,7 +119,7 @@ extension ProdTypeVC: UITableViewDelegate, UITableViewDataSource {
         } else {
             
             let vc = R.storyboard.home.prodListVC()!
-            vc.prodType = self.types[indexPath.section].children[indexPath.row]
+            vc.prodType = self.types[indexPath.section].children[indexPath.row-1]
             self.show(vc, sender: nil)
         }
     }

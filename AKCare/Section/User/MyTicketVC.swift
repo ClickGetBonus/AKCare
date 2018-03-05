@@ -67,7 +67,7 @@ class MyTicketVC: UIViewController {
     
     
     func selectCell(by indexPath: IndexPath) {
-        var indexPath = indexPath
+        let indexPath = ignoreSelectionIndexPath(indexPath)
         guard let ticket = self.getTicket(by: indexPath) else {
             self.showInfo("卡券不存在")
             return
@@ -91,10 +91,9 @@ class MyTicketVC: UIViewController {
                                                              section: selection.section)],
                                               with: .top)
                     self.selection = nil
-                } else {
-                    indexPath = indexPath.rowPlus()
                 }
-                self.tableView.insertRows(at: [indexPath], with: .top)
+                
+                self.tableView.insertRows(at: [indexPath.rowPlus()], with: .top)
                 self.selection = indexPath
                 self.tableView.endUpdates()
 //                self.selection = indexPath
@@ -241,13 +240,17 @@ extension MyTicketVC {
         }
     }
     
-    func ignoreSelectionIndex(_ index: Int) -> Int {
+    func ignoreSelectionIndexPath(_ indexPath: IndexPath) -> IndexPath {
         
         guard let selection = selection else {
-            return index
+            return indexPath
         }
         
-        return index > selection.row ? index-1 : index
+        if selection.section == indexPath.section && selection.row+1 < indexPath.row {
+            return IndexPath(row: indexPath.row-1, section: indexPath.section)
+        } else {
+            return indexPath
+        }
     }
 }
 

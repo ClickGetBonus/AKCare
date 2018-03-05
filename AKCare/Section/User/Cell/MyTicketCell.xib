@@ -61,6 +61,7 @@
                             </label>
                         </subviews>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="7lt-9n-u04" secondAttribute="bottom" id="2ej-ji-cBV"/>
                             <constraint firstAttribute="trailing" secondItem="7lt-9n-u04" secondAttribute="trailing" id="3fi-LE-PMi"/>
                             <constraint firstItem="Wpc-nP-XVW" firstAttribute="top" secondItem="g8c-5i-Mgn" secondAttribute="bottom" constant="4" id="7C5-hq-Jol"/>
                             <constraint firstItem="g8c-5i-Mgn" firstAttribute="top" secondItem="LmU-Ch-yvj" secondAttribute="bottom" constant="4" id="8rZ-ho-KbT"/>
@@ -78,7 +79,6 @@
                             <constraint firstItem="LmU-Ch-yvj" firstAttribute="leading" secondItem="h8k-OA-Nup" secondAttribute="leading" constant="25" id="ntU-Dd-JBc"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="vOd-Wx-hwI" secondAttribute="trailing" constant="10" id="y6v-7R-H90"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="g8c-5i-Mgn" secondAttribute="trailing" constant="10" id="z7v-5h-TrX"/>
-                            <constraint firstItem="7lt-9n-u04" firstAttribute="top" secondItem="h8k-OA-Nup" secondAttribute="top" constant="8" id="z9r-iy-RGC"/>
                             <constraint firstItem="g8c-5i-Mgn" firstAttribute="leading" secondItem="LmU-Ch-yvj" secondAttribute="leading" id="zfc-4E-rWl"/>
                         </constraints>
                     </view>
