@@ -40,6 +40,11 @@ class MeVC: UIViewController {
         
         self.navBarBgAlpha = 0
         navigationController?.navigationBar.shadowImage = UIImage()
+        if #available(iOS 11.0, *) {
+            self.scrollView.contentInsetAdjustmentBehavior = .never
+        } else {
+            
+        }
         
         self.setupSubviews()
     }

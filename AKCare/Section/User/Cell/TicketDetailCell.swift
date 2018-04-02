@@ -9,8 +9,6 @@
 import UIKit
 
 class TicketDetailCell: UITableViewCell {
-
-    static let cellHeight: CGFloat = 120.0
     
     @IBOutlet weak var ticketPriceLabel: UILabel!
     @IBOutlet weak var ticketDescriptionLabel: UILabel!

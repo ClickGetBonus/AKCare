@@ -13,6 +13,8 @@ PODS:
   - R.swift (4.0.0):
     - R.swift.Library (~> 4.0.0)
   - R.swift.Library (4.0.0)
+  - Segmentio (3.0)
+  - SnapKit (4.0.0)
   - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
@@ -26,6 +28,8 @@ DEPENDENCIES:
   - Kingfisher
   - PKHUD (~> 5.0.0)
   - R.swift
+  - Segmentio (~> 3.0)
+  - SnapKit (~> 4.0.0)
   - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -41,8 +45,10 @@ SPEC CHECKSUMS:
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
   R.swift: d6a5ec2f55a8441dc0ed9f1f8b37d7d11ae85c66
   R.swift.Library: c3af34921024333546e23b70e70d0b4e0cffca75
+  Segmentio: 1607fba3b42230f5f91e997d1a3f337f1176674c
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: facca96a3040db14b79b0f3c56163ccce33321f0
+PODFILE CHECKSUM: 6ae90ebbd567081bb38cfc67c5a800d5e761cf2e
 
 COCOAPODS: 1.4.0.beta.1

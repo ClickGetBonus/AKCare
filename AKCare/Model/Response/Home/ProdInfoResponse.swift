@@ -20,7 +20,7 @@ class ProdInfoResponse: BaseResponse {
     var paintSize: String = "" //理论涂刷面积
     var prodCode: String = "" //产品编码
     var favorite: Bool = false //是否为用户收藏的商品
-    var pics: [String] = [] //商品图片。其中元素为字符串
+    var pics: [String] = [] //商品图片。其中元素为字符串Url
     var picTexts: [IntroElement] = [] //商品图文。其中元素参见数据类型：图文。
 }
 

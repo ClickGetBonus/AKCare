@@ -9,6 +9,8 @@
 import UIKit
 
 class ProdCell: UITableViewCell {
+    
+    static let CellHeight: CGFloat = 88
 
     @IBOutlet weak var prodImgView: UIImageView!
     @IBOutlet weak var prodNameLabel: UILabel!

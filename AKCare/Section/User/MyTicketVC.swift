@@ -186,7 +186,13 @@ extension MyTicketVC {
         guard let selection = self.selection else {
             return MyTicketCell.cellHeight
         }
-        return indexPath == IndexPath(row: selection.row+1, section: selection.section) ? TicketDetailCell.cellHeight : MyTicketCell.cellHeight
+        
+        if indexPath == IndexPath(row: selection.row+1, section: selection.section) {
+            return UITableViewAutomaticDimension
+//            return TicketDetailCell.cellHeight
+        } else {
+            return MyTicketCell.cellHeight
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

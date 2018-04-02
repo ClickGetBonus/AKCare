@@ -16,6 +16,6 @@ target 'AKCare' do
   pod 'ElongationPreview'
   pod 'JDAnimationKit'
   pod 'CYLTableViewPlaceHolder'
-  
-
+  pod 'Segmentio', '~> 3.0'
+  pod 'SnapKit', '~> 4.0.0'
 end

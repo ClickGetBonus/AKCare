@@ -19,6 +19,8 @@
 		3F6C42BB20135266009BA31E /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6C42BA20135266009BA31E /* UserInfo.swift */; };
 		3FB103EE202EDEDE00497799 /* TicketDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB103EC202EDEDE00497799 /* TicketDetailCell.swift */; };
 		3FB103EF202EDEDE00497799 /* TicketDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FB103ED202EDEDE00497799 /* TicketDetailCell.xib */; };
+		3FF81813206F8B4100D2797D /* MyOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF81811206F8B4100D2797D /* MyOrderCell.swift */; };
+		3FF81814206F8B4100D2797D /* MyOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FF81812206F8B4100D2797D /* MyOrderCell.xib */; };
 		610402701FAAF13C003A5F3B /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6104026F1FAAF13C003A5F3B /* Response.swift */; };
 		610DF3EC1FCD0A2E001609C1 /* AKHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610DF3EB1FCD0A2E001609C1 /* AKHelper.swift */; };
 		610DF3EE1FCD0ADF001609C1 /* InfoType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610DF3ED1FCD0ADF001609C1 /* InfoType.swift */; };
@@ -208,6 +210,8 @@
 		3F6C42BA20135266009BA31E /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		3FB103EC202EDEDE00497799 /* TicketDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketDetailCell.swift; sourceTree = "<group>"; };
 		3FB103ED202EDEDE00497799 /* TicketDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TicketDetailCell.xib; sourceTree = "<group>"; };
+		3FF81811206F8B4100D2797D /* MyOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrderCell.swift; sourceTree = "<group>"; };
+		3FF81812206F8B4100D2797D /* MyOrderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyOrderCell.xib; sourceTree = "<group>"; };
 		5289921369D6377B59EF6B4A /* Pods-AKCare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AKCare.release.xcconfig"; path = "Pods/Target Support Files/Pods-AKCare/Pods-AKCare.release.xcconfig"; sourceTree = "<group>"; };
 		6104026F1FAAF13C003A5F3B /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		610DF3EB1FCD0A2E001609C1 /* AKHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKHelper.swift; sourceTree = "<group>"; };
@@ -433,6 +437,8 @@
 				610E574D202C310400B8DA42 /* MyTicketCell.xib */,
 				3FB103EC202EDEDE00497799 /* TicketDetailCell.swift */,
 				3FB103ED202EDEDE00497799 /* TicketDetailCell.xib */,
+				3FF81811206F8B4100D2797D /* MyOrderCell.swift */,
+				3FF81812206F8B4100D2797D /* MyOrderCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1061,6 +1067,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FF81814206F8B4100D2797D /* MyOrderCell.xib in Resources */,
 				3FB103EF202EDEDE00497799 /* TicketDetailCell.xib in Resources */,
 				6139F1181FBC141100C3FB4F /* Home.storyboard in Resources */,
 				61F426731FA1B87600D3BBB6 /* Promotion.storyboard in Resources */,
@@ -1162,6 +1169,8 @@
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
+				"${BUILT_PRODUCTS_DIR}/Segmentio/Segmentio.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
 			);
@@ -1177,6 +1186,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Segmentio.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
 			);
@@ -1243,6 +1254,7 @@
 				614C37081FF377B30027817E /* Product.swift in Sources */,
 				610E574A202C235100B8DA42 /* MyTicketVC.swift in Sources */,
 				612163532015C9C400773BA2 /* GetPopupResponse.swift in Sources */,
+				3FF81813206F8B4100D2797D /* MyOrderCell.swift in Sources */,
 				612289D02015C0880004E22B /* RegistRequest.swift in Sources */,
 				61B7DEE62018611000F569F8 /* GetTicketListResponse.swift in Sources */,
 				61B88F291FBE832D009AB8D8 /* ViewUtil.swift in Sources */,

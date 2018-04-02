@@ -12,7 +12,8 @@ import PKHUD
 
 struct URLSessionClient: Client {
     
-    var host: String = "http://cx2.dlsapp.cn/dlsInterfaceV3/"
+//    var host: String = "http://cx2.dlsapp.cn/dlsInterfaceV3/"
+    var host: String = "http://wx1.dlsapp.cn/dlsInterface/"
     
     static let share = URLSessionClient()
     

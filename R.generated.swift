@@ -31,7 +31,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 146 images.
+  /// This `R.image` struct is generated, and contains static references to 148 images.
   struct image {
     /// Image `LaunchImage`.
     static let launchImage = Rswift.ImageResource(bundle: R.hostingBundle, name: "LaunchImage")
@@ -83,6 +83,10 @@ struct R: Rswift.Validatable {
     static let examRes = Rswift.ImageResource(bundle: R.hostingBundle, name: "examRes")
     /// Image `face_2`.
     static let face_2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "face_2")
+    /// Image `fav_d`.
+    static let fav_d = Rswift.ImageResource(bundle: R.hostingBundle, name: "fav_d")
+    /// Image `fav_s`.
+    static let fav_s = Rswift.ImageResource(bundle: R.hostingBundle, name: "fav_s")
     /// Image `gift_ticket_bg`.
     static let gift_ticket_bg = Rswift.ImageResource(bundle: R.hostingBundle, name: "gift_ticket_bg")
     /// Image `gift_ticket_old_bg`.
@@ -449,6 +453,16 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "face_2", bundle: ..., traitCollection: ...)`
     static func face_2(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.face_2, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "fav_d", bundle: ..., traitCollection: ...)`
+    static func fav_d(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.fav_d, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "fav_s", bundle: ..., traitCollection: ...)`
+    static func fav_s(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.fav_s, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "gift_ticket_bg", bundle: ..., traitCollection: ...)`
@@ -1059,7 +1073,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 10 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 11 nibs.
   struct nib {
     /// Nib `H5ViewController`.
     static let h5ViewController = _R.nib._H5ViewController()
@@ -1067,6 +1081,8 @@ struct R: Rswift.Validatable {
     static let imageCollectionViewCell = _R.nib._ImageCollectionViewCell()
     /// Nib `MsgTypeCell`.
     static let msgTypeCell = _R.nib._MsgTypeCell()
+    /// Nib `MyOrderCell`.
+    static let myOrderCell = _R.nib._MyOrderCell()
     /// Nib `MyTicketCell`.
     static let myTicketCell = _R.nib._MyTicketCell()
     /// Nib `ProBannerCell`.
@@ -1095,6 +1111,11 @@ struct R: Rswift.Validatable {
     /// `UINib(name: "MsgTypeCell", in: bundle)`
     static func msgTypeCell(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.msgTypeCell)
+    }
+    
+    /// `UINib(name: "MyOrderCell", in: bundle)`
+    static func myOrderCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.myOrderCell)
     }
     
     /// `UINib(name: "MyTicketCell", in: bundle)`
@@ -1365,6 +1386,17 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
+    struct _MyOrderCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "MyOrderCell"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> MyOrderCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? MyOrderCell
+      }
+      
+      fileprivate init() {}
+    }
+    
     struct _MyTicketCell: Rswift.NibResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "MyTicketCell"
@@ -1493,6 +1525,7 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "bg_180_64") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'bg_180_64' is used in storyboard 'Home', but couldn't be loaded.") }
         if UIKit.UIImage(named: "icon_prod_type") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icon_prod_type' is used in storyboard 'Home', but couldn't be loaded.") }
         if UIKit.UIImage(named: "icon_sign") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icon_sign' is used in storyboard 'Home', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "fav_d") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'fav_d' is used in storyboard 'Home', but couldn't be loaded.") }
         if UIKit.UIImage(named: "icon_study") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icon_study' is used in storyboard 'Home', but couldn't be loaded.") }
         if UIKit.UIImage(named: "hotInfo_right_bg") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'hotInfo_right_bg' is used in storyboard 'Home', but couldn't be loaded.") }
         if UIKit.UIImage(named: "hotInfo_left_bg") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'hotInfo_left_bg' is used in storyboard 'Home', but couldn't be loaded.") }
