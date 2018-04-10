@@ -30,7 +30,6 @@ class LoginVC: UIViewController {
                 LogInOut.login(auth: auth)
             }
         }
-        
     }
         
     @IBAction func onRegist(_ sender: Any) {

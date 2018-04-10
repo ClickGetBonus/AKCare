@@ -8,7 +8,7 @@ target 'AKCare' do
   pod 'Alamofire', '~> 4.5'
   pod 'Kingfisher'
   pod 'R.swift'
-  pod 'HandyJSON', '~> 4.0.0-beta.1'
+  pod 'HandyJSON', ‘4.0.0-beta.1’
   pod 'SwiftyJSON'
   pod 'PKHUD', '~> 5.0.0'
   pod 'DGElasticPullToRefresh', '~> 1.1'

@@ -14,6 +14,6 @@ class LoginResponse: BaseResponse {
     var userName: String = ""
     var userType: String = ""
     
-    var vidInvalid: Bool = false
-    var vstr: String = ""
+    var passLogin: Bool = false
+    var openId: String = ""
 }

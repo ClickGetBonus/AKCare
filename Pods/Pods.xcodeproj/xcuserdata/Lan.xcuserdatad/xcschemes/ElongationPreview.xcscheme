@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '352DA34128A559B175B61B448CB99408'
-               BlueprintName = 'ElongationPreview'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'ElongationPreview.framework'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "352DA34128A559B175B61B448CB99408"
+               BlueprintName = "ElongationPreview"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "ElongationPreview.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
