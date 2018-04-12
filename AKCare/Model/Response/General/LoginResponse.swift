@@ -17,3 +17,4 @@ class LoginResponse: BaseResponse {
     var passLogin: Bool = false
     var openId: String = ""
 }
+

@@ -22,5 +22,7 @@ struct Order: HandyJSON {
     var tel: String = "" //联系电话
     var address: String = "" //详细收货地址
     var remarkTime: String = "" //创建评价时间
-    var prods: [Product] = [] //订单中的商品。其中元素参见数据类型：订单商品。
+    var isHidePrice: Int = 0 //是否隐藏订单金额
+    var orderSource: Int = 0 //订单来源
+    var prods: [OrderProduct] = [] //订单中的商品。其中元素参见数据类型：订单商品。
 }
