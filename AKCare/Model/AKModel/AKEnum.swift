@@ -47,9 +47,9 @@ enum TicketUseScene: Int {
     }
 }
 
-//订单状态 1为待发货，2为配送中，3为已完成
+//订单状态 1为待发货，2为待收货，3为已完成
 enum OrderState: Int {
     case waitSend = 1
-    case sending = 2
+    case waitReceive = 2
     case complete = 3
 }

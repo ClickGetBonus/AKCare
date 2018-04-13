@@ -24,7 +24,7 @@ class MyOrderVC: UIViewController {
                 case 0:
                     state = .waitSend
                 case 1:
-                    state = .sending
+                    state = .waitReceive
                 case 2:
                     state = .complete
                 default:
