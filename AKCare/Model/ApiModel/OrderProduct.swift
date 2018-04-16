@@ -13,9 +13,9 @@ import HandyJSON
  订单商品
  */
 struct OrderProduct: HandyJSON {
-    var actSetType: String = "" //套餐类型
-    var consumeType: String = "" //
-    var dataType: String = "" //数据类型
+    var actSetType: Int = 0 //套餐类型 0主套餐 1子套餐 2其他
+    var consumeType: String = "" // ???
+    var dataType: Int = 0 //数据类型
     var name: String = "" //名称
     var orderProdId: Int = 0 //商品id
     var pic: String = "" //图片
