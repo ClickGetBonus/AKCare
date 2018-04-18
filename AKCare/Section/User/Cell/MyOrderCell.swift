@@ -29,7 +29,6 @@ class MyOrderCell: UITableViewCell {
     
     func configure(by order: Order) {
         
-        
         let prods = order.prods;
         
         _ = self.orderProdsView.subviews.map { $0.removeFromSuperview() }
@@ -40,7 +39,6 @@ class MyOrderCell: UITableViewCell {
         self.orderProdNumLabel.text = "共\(order.totalQuantity)件商品"
         
         self.accountLabel.text = order.isHidePrice == 1 ? "" : "合计: \(order.totalPrice)元"
-        
     }
     
     
@@ -49,36 +47,37 @@ class MyOrderCell: UITableViewCell {
         
         self.isHidePrice = isHidePrice
         
-        var currentSeperator = self.generalSeperatorView()
-        currentSeperator.snp.remakeConstraints { (make) in
-            
-            make.top.equalTo(self.orderProdNumLabel.bottom).offset(5)
-            make.left.equalToSuperview()
-            make.right.equalToSuperview()
-            make.height.equalTo(1)
-        }
+        var currentSeperator: UIView
+        var topContraint: ConstraintItem = self.orderProdsView.snp.top
         
         for prod in prods {
             
-            var bottomView: UIView
-            if prod.dataType == 0 && prod.actSetType == 0 { //主套餐
-                bottomView = configureMainAct(by: prod, topConstraint: currentSeperator)
-            } else if prod.actSetType == 1 { //子套餐
-                bottomView = configureChildAct(by: prod, topConstraint: currentSeperator)
-            } else { //其他商品
-                bottomView = configureOther(by: prod, topConstraint: currentSeperator)
-            }
-            
             currentSeperator = self.generalSeperatorView()
             currentSeperator.snp.makeConstraints({ (make) in
-                make.top.equalTo(bottomView).offset(5)
+                make.top.equalTo(topContraint).offset(5)
                 make.left.equalToSuperview()
                 make.right.equalToSuperview()
                 make.height.equalTo(1)
             })
             
-            
+            if prod.dataType == 0 && prod.actSetType == 0 { //主套餐
+                topContraint = configureMainAct(by: prod, topConstraint: currentSeperator).snp.bottom
+            } else if prod.actSetType == 1 { //子套餐
+                topContraint = configureChildAct(by: prod, topConstraint: currentSeperator).snp.bottom
+            } else { //其他商品 如: 订单中使用的卡券
+                topContraint = configureOther(by: prod, topConstraint: currentSeperator).snp.bottom
+            }
         }
+        
+        currentSeperator = self.generalSeperatorView()
+        currentSeperator.snp.makeConstraints({ (make) in
+            make.top.equalTo(topContraint).offset(5)
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+            make.height.equalTo(1)
+            let bottom = make.bottom.equalToSuperview().offset(-5).constraint
+            bottom.layoutConstraints.first?.priority = .defaultLow
+        })
     }
     
     //配置主套餐Cell
@@ -88,8 +87,8 @@ class MyOrderCell: UITableViewCell {
         prodImageView.ak_setImage(urlString: prod.pic)
         self.orderProdsView.addSubview(prodImageView)
         
-        prodImageView.snp.remakeConstraints { (make) in
-            make.top.equalTo(topView).offset(5)
+        prodImageView.snp.makeConstraints { (make) in
+            make.top.equalTo(topView.snp.bottom).offset(5)
             make.left.equalTo(topView)
             make.width.equalTo(100)
             make.height.equalTo(100)
@@ -98,12 +97,14 @@ class MyOrderCell: UITableViewCell {
         let titleLabel = UILabel()
         titleLabel.font = UIFont.systemFont(ofSize: 14)
         titleLabel.text = prod.name
+        titleLabel.numberOfLines = 2
         self.orderProdsView.addSubview(titleLabel)
         
-        titleLabel.snp.remakeConstraints { (make) in
+        titleLabel.snp.makeConstraints { (make) in
             
-            make.left.equalTo(prodImageView).offset(10)
-            make.top.equalTo(prodImageView.bottom).offset(5)
+            make.left.equalTo(prodImageView.snp.right).offset(10)
+            make.top.equalTo(prodImageView).offset(5)
+            make.right.equalToSuperview()
         }
         
         if !self.isHidePrice {
@@ -114,9 +115,9 @@ class MyOrderCell: UITableViewCell {
             priceLabel.font = UIFont.systemFont(ofSize: 14)
             self.orderProdsView.addSubview(priceLabel)
             
-            priceLabel.snp.remakeConstraints({ (make) in
+            priceLabel.snp.makeConstraints({ (make) in
                 make.left.equalTo(titleLabel)
-                make.top.equalTo(titleLabel.bottom).offset(5)
+                make.top.equalTo(titleLabel.snp.bottom).offset(5)
             })
         }
         
@@ -126,10 +127,10 @@ class MyOrderCell: UITableViewCell {
         numLabel.font = UIFont.systemFont(ofSize: 14)
         self.orderProdsView.addSubview(numLabel)
         
-        
-        
-        
-        
+        numLabel.snp.makeConstraints { (make) in
+            make.right.equalToSuperview()
+            make.top.equalTo(titleLabel.snp.bottom).offset(8)
+        }
         
         return prodImageView
     }
@@ -141,12 +142,14 @@ class MyOrderCell: UITableViewCell {
         let titleLabel = UILabel()
         titleLabel.font = UIFont.systemFont(ofSize: 12)
         titleLabel.text = prod.name
+        titleLabel.numberOfLines = 2
         self.orderProdsView.addSubview(titleLabel)
         
-        titleLabel.snp.remakeConstraints { (make) in
+        titleLabel.snp.makeConstraints { (make) in
             
-            make.left.equalTo(topView.left).offset(110)
-            make.top.equalTo(topView).offset(5)
+            make.top.equalTo(topView.snp.bottom).offset(5)
+            make.left.equalTo(topView).offset(110)
+            make.right.equalToSuperview()
         }
         
         if !self.isHidePrice {
@@ -157,26 +160,64 @@ class MyOrderCell: UITableViewCell {
             priceLabel.font = UIFont.systemFont(ofSize: 14)
             self.orderProdsView.addSubview(priceLabel)
             
-            priceLabel.snp.remakeConstraints({ (make) in
+            priceLabel.snp.makeConstraints({ (make) in
                 make.left.equalTo(titleLabel)
-                make.top.equalTo(titleLabel.bottom).offset(5)
+                make.top.equalTo(titleLabel.snp.bottom).offset(5)
             })
+            
+        }
+        
+        let numLabel = UILabel()
+        numLabel.text = "数量: \(prod.quantity)"
+        numLabel.font = UIFont.systemFont(ofSize: 14)
+        self.orderProdsView.addSubview(numLabel)
+        
+        numLabel.snp.makeConstraints { (make) in
+            make.right.equalToSuperview()
+            make.top.equalTo(titleLabel.snp.bottom).offset(8)
         }
         
         
-        return titleLabel
+        return numLabel
     }
     
     //配置其他商品Cell
     func configureOther(by prod: OrderProduct, topConstraint topView: UIView) -> UIView {
         
         
+        let titleLabel = UILabel()
+        titleLabel.font = UIFont.systemFont(ofSize: 12)
+        titleLabel.textColor = UIColor.gray
+        titleLabel.text = prod.name
+        titleLabel.numberOfLines = 2
+        self.orderProdsView.addSubview(titleLabel)
+        
+        titleLabel.snp.makeConstraints { (make) in
+            
+            make.left.equalTo(topView).offset(110)
+            make.top.equalTo(topView.snp.bottom).offset(5)
+            make.right.equalToSuperview()
+        }
+        
+        
+        
+        let numLabel = UILabel()
+        numLabel.text = "数量: \(prod.quantity)"
+        numLabel.font = UIFont.systemFont(ofSize: 14)
+        self.orderProdsView.addSubview(numLabel)
+        
+        numLabel.snp.makeConstraints { (make) in
+            make.right.equalToSuperview()
+            make.top.equalTo(titleLabel.snp.bottom).offset(8)
+        }
+        
+        return numLabel
     }
     
     func generalSeperatorView() -> UIView {
         
         let seperator = UIView()
-        seperator.backgroundColor = UIColor.lightGray
+        seperator.backgroundColor = UIColor.groupTableViewBackground
         self.orderProdsView.addSubview(seperator)
         return seperator
     }

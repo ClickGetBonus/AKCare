@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '98F1A72B3D0EE84BB03A8237539479D4'
-               BlueprintName = 'SwiftyJSON'
+               BlueprintIdentifier = 'E451E82183397C5987D5F0D8A9A48ED9'
+               BlueprintName = 'CYLTableViewPlaceHolder'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'SwiftyJSON.framework'>
+               BuildableName = 'CYLTableViewPlaceHolder.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

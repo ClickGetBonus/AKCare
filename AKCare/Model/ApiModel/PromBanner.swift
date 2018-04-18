@@ -18,6 +18,7 @@ import HandyJSON
  left  活动物品的剩余数量
  leftUnit  活动物品的剩余物品的单位。如：件、套
  joined  是否参加过
+ actType 活动类型. 0 促销活动, 5 陈列活动
  */
 struct PromBanner: HandyJSON {
     var id: String = ""
@@ -27,5 +28,6 @@ struct PromBanner: HandyJSON {
     var pic: String = ""
     var showLeft: Bool = false
     var joined: Bool = false
+    var actType: Int = 0
 }
 

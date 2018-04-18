@@ -14,10 +14,14 @@ class ProInfoVC: UIViewController {
     @IBOutlet weak var proIntroLabel: UILabel!
     @IBOutlet weak var joinButtonView: UIView!
     
+    @IBOutlet weak var proImageTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var proImageWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var joinButtonHeightConstraint: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.proImageWidthConstraint.constant = ScreenWidth
         self.setupBackItem()
     }
     
@@ -26,7 +30,7 @@ class ProInfoVC: UIViewController {
         self.title = "活动详情"
         
         SwiftLoader.show(animated: true)
-        AKApi.send(request: PromInfoRequest(sid: AKUserManager.getSid(), actId: banner.id)) { (response) in
+        AKApi.send(request: PromInfoRequest(sid: AKUserManager.getSid(), actId: banner.id, actType: banner.actType)) { (response) in
             
             if let prom = response {
                 
@@ -49,5 +53,13 @@ class ProInfoVC: UIViewController {
     
     @IBAction func onJoin(_ sender: UIButton) {
         
+    }
+}
+
+extension ProInfoVC: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        self.proImageWidthConstraint.constant = ScreenWidth - min(0, scrollView.contentOffset.y)
+        self.proImageTopConstraint.constant = min(0, scrollView.contentOffset.y)
     }
 }

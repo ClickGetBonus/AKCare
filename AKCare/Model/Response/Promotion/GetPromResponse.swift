@@ -19,4 +19,6 @@ class GetPromResponse: BaseResponse {
     var haveGiveGift: Bool = false //是否有按概率赠送的礼物
     var actStarted: Bool = false //活动是否开始
     var maxInputUnit: String = "" //数量的单位
+    var ticketName: String = "" //赠送卡券的名称
+    
 }

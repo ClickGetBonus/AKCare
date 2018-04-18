@@ -21,8 +21,9 @@ struct PromInfoRequest: Request {
     
     var sid: String
     var actId: String
+    var actType: Int
     
-    var parameters: [String: Any] { return ["sid" : sid, "actId" : actId] }
+    var parameters: [String: Any] { return ["sid" : sid, "actId" : actId, "actType": actType] }
 }
 
 

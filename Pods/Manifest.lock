@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (4.7.1)
+  - Alamofire (4.7.2)
   - CYLTableViewPlaceHolder (1.0.8)
   - DGElasticPullToRefresh (1.1)
   - ElongationPreview (1.1.2)
@@ -7,12 +7,13 @@ PODS:
   - HandyJSON (4.0.0-beta.1)
   - JDAnimationKit (1.1):
     - pop (~> 1.0)
-  - Kingfisher (4.6.4)
+  - Kingfisher (4.7.0)
   - PKHUD (5.0.0)
   - pop (1.0.10)
   - R.swift (4.0.0):
     - R.swift.Library (~> 4.0.0)
   - R.swift.Library (4.0.0)
+  - SCLAlertView (0.8)
   - Segmentio (3.0)
   - SnapKit (4.0.0)
   - SwiftyJSON (4.0.0)
@@ -28,27 +29,29 @@ DEPENDENCIES:
   - Kingfisher
   - PKHUD (~> 5.0.0)
   - R.swift
+  - SCLAlertView
   - Segmentio (~> 3.0)
   - SnapKit (~> 4.0.0)
   - SwiftyJSON
 
 SPEC CHECKSUMS:
-  Alamofire: 68d7d521118d49c615a8d2214d87cdf525599d30
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   CYLTableViewPlaceHolder: 44075c119aab78bbc514c75d771d6565e19938e8
   DGElasticPullToRefresh: 28f11a6026302a90f8ffebbc6e24748e584dddd3
   ElongationPreview: a1b53f61d2086c0ce5c2061e5233bff25b93917d
   Gemini: acff98012273066f1b83c887731260abfaf18ec5
   HandyJSON: 428bb18e2c34c2a77361accebf90cf64e4f74118
   JDAnimationKit: 2b72de95282fdc8b5f1a240a311531bdfeee9199
-  Kingfisher: 68498a706e46c2a050b0c9572f100e5db407f6e0
+  Kingfisher: da6b005aa96d37698e3e4f1ccfe96a5b9bbf27d6
   PKHUD: 3c001512c6e002091184197a8de7a20420786e3b
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
   R.swift: d6a5ec2f55a8441dc0ed9f1f8b37d7d11ae85c66
   R.swift.Library: c3af34921024333546e23b70e70d0b4e0cffca75
+  SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
   Segmentio: 1607fba3b42230f5f91e997d1a3f337f1176674c
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 72b6d5f2d6cc08e6d03ddf0e8b58561a31bc5a26
+PODFILE CHECKSUM: 64ca77834000313eaa65a5a4b21fdc659eb94fe4
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.4.0.rc.1
