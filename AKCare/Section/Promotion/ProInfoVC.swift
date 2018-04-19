@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SCLAlertView
 
 class ProInfoVC: UIViewController {
     
@@ -17,6 +18,8 @@ class ProInfoVC: UIViewController {
     @IBOutlet weak var proImageTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var proImageWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var joinButtonHeightConstraint: NSLayoutConstraint!
+    
+    var response: GetPromResponse?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +56,39 @@ class ProInfoVC: UIViewController {
     
     @IBAction func onJoin(_ sender: UIButton) {
         
+        guard let prom = self.response else {
+            return
+        }
+        
+        if prom.haveActSet {
+            
+        } else if prom.haveGiveGift {
+            self.submitOrder()
+        } else {
+            self.submitOrder()
+        }
+    }
+    
+    func submitOrder() {
+        
+//        AKApi.send(request: GenOrderRequest(sid: AKUserManager.getSid(),
+//                                            name: "",
+//                                            tel: "",
+//                                            ticketId: "",
+//                                            actId: self.response?.actId ?? "",
+//                                            toBuys: "",
+//                                            do4Confirm: 1))
+//        { (response) in
+//
+//            SCLAlertView().showSuccess("您已成功参加活动", subTitle: "感谢您的参与").setDismissBlock { [unowned self] in
+//                self.navigationController?.popViewController(animated: true)
+//            }
+//        }
+        
+        
+        SCLAlertView().showSuccess("您已成功参加活动", subTitle: "感谢您的参与").setDismissBlock { [unowned self] in
+            self.navigationController?.popViewController(animated: true)
+        }
     }
 }
 
