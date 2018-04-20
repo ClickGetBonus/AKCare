@@ -32,13 +32,11 @@ struct URLSessionClient: Client {
         parameters["vid"] = vid
         parameters["vstr"] = vstr
         
-        SwiftLoader.show(animated: true)
         
         print("request url : \(url) ")
         print("request parameters: \(parameters)")
         Alamofire.request(url, method: r.method, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseString { (response) in
             
-            SwiftLoader.hide()
             if let json = response.result.value {
                 
                 let baseResponse = BaseResponse.parse(json)

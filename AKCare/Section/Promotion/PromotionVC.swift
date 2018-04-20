@@ -16,9 +16,10 @@ class PromotionVC: UIViewController {
             tableView.register(ProBannerCell.nib, forCellReuseIdentifier: ProBannerCell.className)
             
             tableView.setupRefreshable(color: NavBGTranslucentColor) {
-                self.delay(seconds: HUDPresentTimeInterval, completion: {
+                
+                self.updatePromotion {
                     self.tableView.dg_stopLoading()
-                })
+                }
             }
         }
     }
@@ -30,16 +31,25 @@ class PromotionVC: UIViewController {
         
         
         SwiftLoader.show(animated: true)
+        self.updatePromotion{
+            SwiftLoader.hide()
+        }
+        
+        
+        navigationController?.navigationBar.shadowImage = UIImage()
+    }
+    
+    func updatePromotion(complete: @escaping () -> Void) {
+        
         AKApi.send(request: HomePageRequest(sid: AKUserManager.getSid())) { (response) in
             
             if let proms = response?.proms {
                 self.proms = proms
                 self.updateViews()
             }
-            SwiftLoader.hide()
+            
+            complete()
         }
-        
-        navigationController?.navigationBar.shadowImage = UIImage()
     }
     
     func updateViews() {

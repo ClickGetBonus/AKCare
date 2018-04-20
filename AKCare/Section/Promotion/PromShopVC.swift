@@ -14,7 +14,10 @@ import UIKit
 
 class PromShopVC: UIViewController {
     
-    var promResponse: GetPromResponse!
+    @IBOutlet weak var tableView: UITableView!
+    
+    
+    var actId: String?
     
     var prom: Prom?
     var actSets: [PromSet] = []
@@ -22,8 +25,10 @@ class PromShopVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.setupBackItem()
         self.getPromSets()
     }
+    
     
 }
 
@@ -33,17 +38,16 @@ class PromShopVC: UIViewController {
 extension PromShopVC {
     
     func getPromSets() {
-        guard let prom = promResponse else {
+        guard let actId = actId else {
             return
         }
         
-        AKApi.send(request: GetPromSetRequest(sid: AKUserManager.getSid(), actId: prom.actId)) { (response) in
+        AKApi.send(request: GetPromSetRequest(sid: AKUserManager.getSid(), actId: actId)) { (response) in
             
             if let res = response {
                 
                 self.prom = res.act
                 self.actSets = res.actSets
-                
             }
         }
     }

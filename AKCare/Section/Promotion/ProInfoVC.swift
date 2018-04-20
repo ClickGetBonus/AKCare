@@ -36,7 +36,7 @@ class ProInfoVC: UIViewController {
         AKApi.send(request: PromInfoRequest(sid: AKUserManager.getSid(), actId: banner.id, actType: banner.actType)) { (response) in
             
             if let prom = response {
-                
+                self.response = prom
                 self.joinButtonView.isHidden = !prom.actStarted
                 let imgType = prom.picTexts.filter{return $0.imgType}.first
                 
@@ -56,13 +56,16 @@ class ProInfoVC: UIViewController {
     
     @IBAction func onJoin(_ sender: UIButton) {
         
-        guard let prom = self.response else {
+        guard let promResponse = self.response else {
             return
         }
         
-        if prom.haveActSet {
+        if promResponse.haveActSet {
             
-        } else if prom.haveGiveGift {
+            let vc = R.storyboard.promotion.promShopVC()!
+            vc.actId = promResponse.actId
+            self.navigationController?.show(vc, sender: nil)
+        } else if promResponse.haveGiveGift {
             self.submitOrder()
         } else {
             self.submitOrder()
@@ -85,7 +88,6 @@ class ProInfoVC: UIViewController {
 //            }
 //        }
         
-        
         SCLAlertView().showSuccess("您已成功参加活动", subTitle: "感谢您的参与").setDismissBlock { [unowned self] in
             self.navigationController?.popViewController(animated: true)
         }
@@ -95,6 +97,7 @@ class ProInfoVC: UIViewController {
 extension ProInfoVC: UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        print(scrollView.contentOffset.y)
         self.proImageWidthConstraint.constant = ScreenWidth - min(0, scrollView.contentOffset.y)
         self.proImageTopConstraint.constant = min(0, scrollView.contentOffset.y)
     }

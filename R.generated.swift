@@ -1073,7 +1073,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 11 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 12 nibs.
   struct nib {
     /// Nib `H5ViewController`.
     static let h5ViewController = _R.nib._H5ViewController()
@@ -1093,6 +1093,8 @@ struct R: Rswift.Validatable {
     static let prodTypeCell = _R.nib._ProdTypeCell()
     /// Nib `ProdTypeHeadCell`.
     static let prodTypeHeadCell = _R.nib._ProdTypeHeadCell()
+    /// Nib `PromSetCell`.
+    static let promSetCell = _R.nib._PromSetCell()
     /// Nib `SignView`.
     static let signView = _R.nib._SignView()
     /// Nib `TicketDetailCell`.
@@ -1141,6 +1143,11 @@ struct R: Rswift.Validatable {
     /// `UINib(name: "ProdTypeHeadCell", in: bundle)`
     static func prodTypeHeadCell(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.prodTypeHeadCell)
+    }
+    
+    /// `UINib(name: "PromSetCell", in: bundle)`
+    static func promSetCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.promSetCell)
     }
     
     /// `UINib(name: "SignView", in: bundle)`
@@ -1460,6 +1467,17 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
+    struct _PromSetCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "PromSetCell"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> PromSetCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PromSetCell
+      }
+      
+      fileprivate init() {}
+    }
+    
     struct _SignView: Rswift.NibResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "SignView"
@@ -1637,10 +1655,15 @@ struct _R: Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "Promotion"
       let proInfoVC = StoryboardViewControllerResource<ProInfoVC>(identifier: "ProInfoVC")
+      let promShopVC = StoryboardViewControllerResource<PromShopVC>(identifier: "PromShopVC")
       let promotionVC = StoryboardViewControllerResource<PromotionVC>(identifier: "PromotionVC")
       
       func proInfoVC(_: Void = ()) -> ProInfoVC? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: proInfoVC)
+      }
+      
+      func promShopVC(_: Void = ()) -> PromShopVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: promShopVC)
       }
       
       func promotionVC(_: Void = ()) -> PromotionVC? {
@@ -1650,6 +1673,7 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "NavIcon") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'NavIcon' is used in storyboard 'Promotion', but couldn't be loaded.") }
         if UIKit.UIImage(named: "bg_200") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'bg_200' is used in storyboard 'Promotion', but couldn't be loaded.") }
+        if _R.storyboard.promotion().promShopVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'promShopVC' could not be loaded from storyboard 'Promotion' as 'PromShopVC'.") }
         if _R.storyboard.promotion().proInfoVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'proInfoVC' could not be loaded from storyboard 'Promotion' as 'ProInfoVC'.") }
         if _R.storyboard.promotion().promotionVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'promotionVC' could not be loaded from storyboard 'Promotion' as 'PromotionVC'.") }
       }

@@ -116,6 +116,8 @@
 		615581961FA9CFAB00756DC5 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615581951FA9CFAB00756DC5 /* LoginResponse.swift */; };
 		615581981FA9D20500756DC5 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615581971FA9D20500756DC5 /* LoginRequest.swift */; };
 		615AC0791FFB3C0600AD0BC9 /* ProdInfoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615AC0781FFB3C0600AD0BC9 /* ProdInfoRequest.swift */; };
+		617B92DF2089D60300879FFB /* PromSetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617B92DD2089D60300879FFB /* PromSetCell.swift */; };
+		617B92E02089D60300879FFB /* PromSetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 617B92DE2089D60300879FFB /* PromSetCell.xib */; };
 		617B992B1FB039A300EC3395 /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617B992A1FB039A300EC3395 /* BaseRequest.swift */; };
 		617B992D1FB03DFE00EC3395 /* ViewControllerUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617B992C1FB03DFE00EC3395 /* ViewControllerUtil.swift */; };
 		617B99301FB0435F00EC3395 /* AKUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617B992F1FB0435F00EC3395 /* AKUserManager.swift */; };
@@ -312,6 +314,8 @@
 		615581951FA9CFAB00756DC5 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		615581971FA9D20500756DC5 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		615AC0781FFB3C0600AD0BC9 /* ProdInfoRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdInfoRequest.swift; sourceTree = "<group>"; };
+		617B92DD2089D60300879FFB /* PromSetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromSetCell.swift; sourceTree = "<group>"; };
+		617B92DE2089D60300879FFB /* PromSetCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromSetCell.xib; sourceTree = "<group>"; };
 		617B992A1FB039A300EC3395 /* BaseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
 		617B992C1FB03DFE00EC3395 /* ViewControllerUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerUtil.swift; sourceTree = "<group>"; };
 		617B992F1FB0435F00EC3395 /* AKUserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AKUserManager.swift; sourceTree = "<group>"; };
@@ -873,6 +877,8 @@
 			children = (
 				618FD25E1FBED584004C2B96 /* ProBannerCell.swift */,
 				618FD25F1FBED584004C2B96 /* ProBannerCell.xib */,
+				617B92DD2089D60300879FFB /* PromSetCell.swift */,
+				617B92DE2089D60300879FFB /* PromSetCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1087,6 +1093,7 @@
 				618FD2611FBED584004C2B96 /* ProBannerCell.xib in Resources */,
 				61B88F271FBE8290009AB8D8 /* H5ViewController.xib in Resources */,
 				610E574F202C310400B8DA42 /* MyTicketCell.xib in Resources */,
+				617B92E02089D60300879FFB /* PromSetCell.xib in Resources */,
 				614432761FA862A400C7A99A /* Infomation.storyboard in Resources */,
 				61DEE02A1FECEA5D00E03CD8 /* SignView.xib in Resources */,
 				6139F12C1FBC426B00C3FB4F /* ImageCollectionViewCell.xib in Resources */,
@@ -1306,6 +1313,7 @@
 				61B7DEEE2018627700F569F8 /* Ticket.swift in Sources */,
 				613C75FC1FEBC15100D16075 /* Prom.swift in Sources */,
 				612163592015CB5A00773BA2 /* GetPromSetRequest.swift in Sources */,
+				617B92DF2089D60300879FFB /* PromSetCell.swift in Sources */,
 				6121634D2015C5AB00773BA2 /* SignInRequest.swift in Sources */,
 				61E008741FAAF86A0039364A /* Client.swift in Sources */,
 				613C75FA1FEBC13000D16075 /* GetPromResponse.swift in Sources */,

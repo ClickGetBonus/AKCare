@@ -18,7 +18,7 @@ target 'AKCare' do
   pod 'CYLTableViewPlaceHolder'
   pod 'Segmentio', '~> 3.0'
   pod 'SnapKit', '~> 4.0.0'
-  pod 'SCLAlertView'
+  pod 'SCLAlertView', '0.8'
   
   
 end
